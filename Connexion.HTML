@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="fr-FR"> 
+ <!--HEAD veut dire en tete.texte du haut de la page-->
+     <head>
+          <meta charset="UTF-8"\>
+          <meta name="viewport" content="width=devise-width, initial-scale=1.0">
+          <title>IBMprod</title>
+
+          <link rel="stylesheet"type="text/css"href="Connexion1.CSS"\>
+
+     </head>
+
+     <!--BODY veut dire simplement corps.texte du milieux-->
+
+     <body>
+          <header>
+               <h1> <img src="PHOTOS/IBMprodS.png" alt="logo de l'entreprise"></h1>
+               <h2>
+                    <!--formulaire d'identifiant  du client-->
+ 
+                    <form method ="post" id="client"action="Connexion.PHP"\>
+                         <fieldset form="id_client"\>
+                              <legend>Identifiant</legend>
+                              <input type="radio" id="Homme" name="sexe" value="Homme">
+                                   <label for="Homme">Homme</label><br>
+                              <input type="radio" id="Femme" name="sexe" value="Femme">
+                                   <label for="Femme">Femme</label><br>
+                                   <label for="NOMS">Nom d'utilisateur:</label>
+                                   <label for="Age">Date de naissance</label>
+                              <input type="date" name="Age" id ="date" class="form-control" max="2010" min="1919"required="required"><br>
+                              <input type ="text" id="NOMS" name="Utilisateur" maxlength="30" placeholder="noms d'utilisateur" required="required"><br>
+                                   <label for="email">Email:</label>
+                              <input type ="email" id="email" name="mail" placeholder="adresse électronique" maxlength="30" autofocus="autofocus" required="required"><br>
+                                   <label for="pass">Mot de passe :</label>
+                              <input type="password" id="pass" name="pass" placeholder="Mot de passe" maxlength="20" required="required"><br>
+                    
+                              <br><input  type="submit" email="valid_form";pass="valid_form" value="Connexion" id="Connexion" > 
+                   
+                         </fieldset>
+                    </form>
+               </h2>
+               <hr>
+          </header>
+     
+     </body>
+
+     <!--FOOTER veut dire bas.texte du bas de la page-->
+     
+     <footer>
+          <p>IBMprod45@gmail.com  Benjamin masini  +243853193403</p>
+          <p>copyright &copy;BEBOL2022 par IBMprod</p>
+     </footer>
+</html>

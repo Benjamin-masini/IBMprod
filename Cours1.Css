@@ -1,0 +1,42 @@
+/* FOND*/
+body{ 
+    font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ,serif ;
+    background: url(PHOTOS/Img1.jpg);
+    background-repeat : no-repeat;
+    background-size:calc(100%) ;
+    background-attachment: fixed , scroll; 
+    scroll-behavior: auto;
+    box-sizing :border-box;
+}
+.Explication{
+    font-size: 25px;
+    color: darkgoldenrod;
+
+
+}
+.Explication a{
+    text-decoration-line: none;
+    color: darkgoldenrod;
+}
+
+
+/* TEXTE */
+
+.header-logo{  
+    float: left;
+    margin-left: 0%;
+}
+.Explication{
+    font-size: 20px;
+    color: darkgoldenrod;
+}
+
+/*COOPYIGHT*/ 
+footer { 
+    font-family: oblique;
+    color: white;
+    text-align: center;
+    float: absolute;
+    top: 80%;
+    left: 40%;
+}

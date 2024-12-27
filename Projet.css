@@ -1,0 +1,30 @@
+/* FOND*/
+    body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif ;
+
+        background-color:grey;
+        background-repeat : no-repeat;
+        background-size:calc(100%) ;
+        background-attachment: fixed , scroll; 
+        scroll-behavior: auto;
+    }
+
+
+/* TEXTE */
+    .header-logo{  
+        float: left;
+        margin-left: 0%;
+    }
+    .Explication{
+        font-size: 20px;
+        color: darkgoldenrod;
+    }
+    
+/*COOPYIGHT*/ 
+    footer { 
+        font-family: oblique;
+        color: white;
+        text-align: center;
+        float: absolute;
+        top: 80%;
+        left: 40%;
+    }

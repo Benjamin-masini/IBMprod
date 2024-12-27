@@ -1,0 +1,120 @@
+/* FOND*/
+body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif ;
+
+    background-image: url( PHOTOS/Img1.jpg );
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+/* MENUE */
+
+.navbar{
+    background-color: #333;
+    width: 1319px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+}
+.nav-menu{
+    width: 230%;
+}
+
+
+/* TEXTE */
+/* Styles du contenu principal */
+h2 {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.bienvenu {
+    color: darkgoldenrod;
+    text-align: center;
+    font-size: 70px;
+    margin: 20px;
+}
+
+
+.service {
+    
+    color: darkgoldenrod;
+    
+}
+.service a{
+    text-decoration-line: none;
+    color: white;
+}
+
+
+/*COOPYIGHT*/ 
+footer { 
+    font-family:oblique;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+   
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position:absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .menu a {
+        text-align: center;
+        padding: 15px;
+        border-top: 1px solid #444;
+    }
+    .navbar{
+        width: 130%;
+    }
+    footer{
+         width: 130%;
+    }
+}

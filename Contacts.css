@@ -1,0 +1,51 @@
+/* FOND*/
+body{ 
+    font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif ;
+    background-image: url( PHOTOS/Img1.jpg );
+    background-repeat : no-repeat;
+    background-size:calc(100%) ;
+    background-attachment: fixed , scroll; 
+    scroll-behavior: auto;
+    box-sizing :border-box;
+}
+
+
+.galerie{
+    position: absolute;
+    column-count: 3;
+    gap: 10px;
+}
+.galeries{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.galeries img{
+    width: 150px;
+    
+}
+
+
+
+/* TEXTE */
+.Service {
+    
+    color:darkgoldenrod;
+}
+.Service a{
+    text-decoration-line: none;
+    color: white;
+}
+.galerie{
+    color: darkgoldenrod;
+    text-decoration-line: none;
+
+}
+
+/*COOPYIGHT*/ 
+footer { 
+    font-family:oblique;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+}

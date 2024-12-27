@@ -1,0 +1,35 @@
+/*mise en page du head*/
+body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif 
+    ;
+    background-color: rgb(11, 41, 131);
+    background-image:
+    background-size  calc(100%) ;
+    background-repeat :repeat;
+    box-sizing :border-box;
+}
+section 
+{color: darkgoldenrod ; } 
+h1{
+    color: darkgoldenrod ;
+    text-decoration:underline ;
+    font-size : 300%;
+    text-align : center ;
+}
+h2{ color:darkgoldenrod;}
+h3{color: darkgoldenrod; }
+#Connexion:hover { color: white;
+} 
+#Connexion{
+ background-color: darkgoldenrod;
+ color: black;
+ padding: 5px 10px;
+}
+footer { 
+    font-family:oblique;
+    color:darkgoldenrod;
+    text-align: center;
+    float: absolute;
+    top: 80%;
+    left: 40%;
+       
+}
