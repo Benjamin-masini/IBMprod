@@ -10,11 +10,10 @@
 body{ 
     font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ,serif ;
     background: url(PHOTOS/ADOBE\ \(2\).png);
-    background-repeat : no-repeat;
-    background-size:calc(100%) ;
-    background-attachment: fixed , scroll; 
-    scroll-behavior: auto;
-    box-sizing :border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 a{
@@ -26,9 +25,18 @@ footer {
     font-family: oblique;
     color: white;
     text-align: center;
-    float: left;
-    top: 80%;
-    left: 40%;
+    padding: 10px 0;
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    body{
+        flex-direction: column;
+    }
+   
+    footer{
+        width: auto;
+   }
 }
     </style>
     
