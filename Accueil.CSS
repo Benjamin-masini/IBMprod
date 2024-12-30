@@ -22,6 +22,9 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     align-items: center;
     padding: 5px 15px;
 }
+.logo{
+    width: 100px;
+}
 
 .menu a{
     color: #fff;
