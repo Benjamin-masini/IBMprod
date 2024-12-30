@@ -23,7 +23,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     padding: 5px 15px;
 }
 .logo{
-    width: 50px;
+    width: 100px;
 }
 
 .menu a{
@@ -93,7 +93,11 @@ footer {
 
 /* Styles pour mobile */
 @media (max-width: 768px) {
-    .menu {
+    
+.logo{
+    width: 100px;
+}
+.menu {
         display: none;
         flex-direction: column;
         width: 100%;
