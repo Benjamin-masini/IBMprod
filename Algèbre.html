@@ -10,10 +10,10 @@
 body{ 
     font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ,serif ;
     background: url(PHOTOS/ALGBRE\ \(1\).png);
-    margin: auto;
-    padding: auto;
-    display: flex;
-    flex-direction: column;
+    background-size:calc(100%) ;
+    background-attachment: fixed , scroll; 
+    scroll-behavior: auto;
+    box-sizing :border-box;
 }
 
 a{
@@ -31,7 +31,7 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
     body{
-        flex-direction: column;
+        flex-direction: initial;
     }
    
     footer{
