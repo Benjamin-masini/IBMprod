@@ -10,10 +10,11 @@
 body{ 
     font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ,serif ;
     background: url(PHOTOS/ALGBRE\ \(1\).png);
-    background-size:calc(100%) ;
-    background-attachment: fixed , scroll; 
-    scroll-behavior: auto;
-    box-sizing: border-box;
+     margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
 }
 
 a{
@@ -22,25 +23,22 @@ a{
 }
 /*COOPYIGHT*/ 
 footer { 
-color: white; 
-}
-/* Styles pour mobile */
-@media (max-width: 768px) {
-    body{
-        flex-direction: colum;
-        background-repeat: no-repeat;
-        
-
-    }
-   
-    footer{
-    width: auto;
     font-family:oblique;
     color: white;
     text-align: center;
     padding: 10px 0;
     background-color: #333;
-    positionnement: static, down; 
+}
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    body{
+        flex-direction: colum;
+
+    }
+   
+    footer{
+    width: auto;
+     
    }
 }
     </style>
