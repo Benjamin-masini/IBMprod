@@ -22,12 +22,12 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     align-items: center;
     padding: 5px 15px;
 }
-.logo{
+.navbar-brand logo{
     width: 100%;
     height: 80px;
 }
 
-.menu li{
+.menu ul{
     color: #fff;
     text-decoration: none;
     padding: 10px 12px;
@@ -35,7 +35,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 
 .menu li:hover {
-    background-color: #575757;
+    background-color: black;
 }
 
 .menu-icon {
