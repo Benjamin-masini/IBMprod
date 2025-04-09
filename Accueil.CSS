@@ -27,14 +27,14 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     height: 80px;
 }
 
-.menu ul{
+.navbar-nav ms-aut{
     color: #fff;
     text-decoration: none;
     padding: 10px 12px;
     transition: background-color 0.3s;
 }
 
-.menu ul:hover {
+.navbar-nav ms-aut:hover {
     background-color: black;
 }
 
