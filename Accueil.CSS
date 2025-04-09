@@ -34,7 +34,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     transition: background-color 0.3s;
 }
 
-.menu li:hover {
+.menu ul:hover {
     background-color: black;
 }
 
