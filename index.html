@@ -2,65 +2,60 @@
 <html lang="fr-FR">
   <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=devise-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet"type="text/css"href="Accueil.CSS"/>
+    <link rel="stylesheet" type="text/css" href="Accueil.CSS"/>
     <link rel="shortcut icon" type="image/x-icon" href="PHOTOS/IBMprodV.png">
-    <title>IBMprod|Acceuil</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>IBMprod | Acceuil</title>
   </head>
   <body>
-    <h1>
-      <header class="navbar">
-        
-                    <!--Barre de navigation-->
-            
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-        <button class="menu" type="button" data-bs-toggle="collapse" data-bs-target="menu" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="menu-icon"></span>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Icone du menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuLinks" aria-controls="menuLinks" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="nav-menu">
-          <a class="logo" href="#"><img src="PHOTOS/IBMprodS.png" alt="logo de l'entreprise"></a>
-        </div>
-          
-        <div class="menu" id="menuLinks">
-          
-          <a href="Cours.html">Cours</a></li> 
-          <a href="Publicité.html">Marketing</a></li>
-          <a href="Galerie.html">Galerie</a></li> 
-          <a href="Contacts.html">Contacts</a></li>
-          <a href="À propos .pdf">À propos</a></li>
-                
-        </div>
-        <script>
-         </script>     
-      </header>
-    </h1>
 
+        <!-- Logo -->
+        <a class="navbar-brand logo" href="#"><img src="PHOTOS/IBMprodS.png" alt="logo de l'entreprise"></a>
 
-                                    <!--Contenue-->
-    <h2>
-      <div class="bienvenu">BIENVENU(E)!</div>
-        <hr> 
-      <div class="service">
-        <p>Merci d'avoir choisi "BEBOL" comme votre assistant web,de faire confiance à l'entréprise IBMprod et de bien vouloir traiter un partenariat commercial.
-          <br>Ce pendant nous vous demandons de lire minutieusement notre <a href="Politique commerciale.pdf">Consigne d'utilisasion</a> avant de conclure un accord pour un projet,car l'entreprise qui est à caractère commercial ne traite  et conclue des accords et/ou contrats qu'avec des adultes (+18 ans)
-        </p>
-        <p>Toute fois,IBMprod ne ferme jamais ces portes aux mineurs (-18 ans).si l'utilisateur est mineur,il doit être accompagné de son tuteur pour un contrat. 
-          En ce qui concerne notre emploie du temps,nos portes sont ouverte de 09H à 18H:<br>lundi<br>Mardi<br>Mercredi<br>Jeudi<br>Vendredi<br>Sameedi(09H à 15H)
-        </p>
-        <p>Pour mieux  vous servir de près ou de loin,IBMprod met à votre disposition l'accès facil à nos services.</p>
+        <!-- Liens de navigation -->
+        <div class="collapse navbar-collapse" id="menuLinks">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="Cours.html">Cours</a></li>
+            <li class="nav-item"><a class="nav-link" href="Publicité.html">Marketing</a></li>
+            <li class="nav-item"><a class="nav-link" href="Galerie.html">Galerie</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contacts.html">Contacts</a></li>
+            <li class="nav-item"><a class="nav-link" href="À propos .pdf">À propos</a></li>
+          </ul>
+        </div>
       </div>
-    </h2>    
- 
+    </header>
+
+    <main>
+      <h2>
+        <div class="bienvenu">BIENVENU(E)!</div>
+        <hr> 
+        <div class="service">
+          <p>Merci d'avoir choisi "BEBOL" comme votre assistant web, de faire confiance à l'entreprise IBMprod et de bien vouloir traiter un partenariat commercial.
+            <br>Ce pendant nous vous demandons de lire minutieusement notre <a href="Politique commerciale.pdf">Consigne d'utilisasion</a> avant de conclure un accord pour un projet, car l'entreprise qui[...]
+          </p>
+          <p>Toute fois, IBMprod ne ferme jamais ces portes aux mineurs (-18 ans). Si l'utilisateur est mineur, il doit être accompagné de son tuteur pour un contrat. 
+            En ce qui concerne notre emploi du temps, nos portes sont ouvertes de 09H à 18H:<br>Lundi<br>Mardi<br>Mercredi<br>Jeudi<br>Vendredi<br>Samedi (09H à 15H).
+          </p>
+          <p>Pour mieux vous servir de près ou de loin, IBMprod met à votre disposition l'accès facile à nos services.</p>
+        </div>
+      </h2>
+    </main>
+
+    <footer>
+      <p>IBMprod45@gmail.com | IBMprod | +243853193403</p>
+      <p>Copyright &copy; BEBOL2022 par IBMprod</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-
-                                    <!--FOOTER-->
-
-  <footer>
-    <p1>IBMprod45@gmail.com   <pA>IBMprod  <pB> +243853193403</p>
-    <p2>copyright &copy;BEBOL2022 par IBMprod</p>
-  </footer>
-  
 </html>
