@@ -27,14 +27,14 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     height: 80px;
 }
 
-.menu a{
+.menu li{
     color: #fff;
     text-decoration: none;
     padding: 10px 12px;
     transition: background-color 0.3s;
 }
 
-.menu a:hover {
+.menu li:hover {
     background-color: #575757;
 }
 
