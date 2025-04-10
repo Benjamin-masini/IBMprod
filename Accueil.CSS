@@ -34,7 +34,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     transition: background-color 0.3s;
 }
 
-.navbar-nav ms-aut:hover {
+.navbar-nav ms-auto:hover {
     background-color: black;
 }
 
