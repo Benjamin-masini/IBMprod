@@ -95,11 +95,11 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
     
-.logo{
+.navbar-brand logo{
     width: 50%;
     height: 40px;
 }
-.menu {
+.navbar navbar-expand-lg navbar-light bg-light {
         display: none;
         flex-direction: column;
         width: 100%;
