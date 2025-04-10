@@ -35,7 +35,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 
 .nav-item:hover {
-    background-color: black;
+    background-color: #575757;
 }
 
 .menu-icon {
