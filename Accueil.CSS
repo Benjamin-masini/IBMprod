@@ -27,7 +27,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     height: 80px;
 }
 
-.navbar-nav ms-aut{
+.navbar-nav ms-auto{
     color: #fff;
     text-decoration: none;
     padding: 10px 12px;
