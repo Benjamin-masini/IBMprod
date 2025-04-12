@@ -11,7 +11,7 @@ body {
 
 /* MENU */
 .navbar {
-    background-color: #333;
+    background-color: #333 !important;
     color: #ffffff;
     padding: 10px;
     text-align: center;
