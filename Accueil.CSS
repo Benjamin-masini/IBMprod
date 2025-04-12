@@ -14,15 +14,15 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 /* MENUE */
 
 .navbar navbar-expand-lg navbar-light bg-light{
-    background-color: #333;
-    width: 1319px;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 15px;
-    z-index: 1000;
-   position: fixed;
+background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .navbar-brand logo{
     width: 100%;
