@@ -14,7 +14,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 /* MENUE */
 
 .navbar navbar-expand-lg navbar-light bg-light{
-    background-color: #333;
+    background-color: BLACK;
     width: 1319px;
     height: 100px;
     display: flex;
