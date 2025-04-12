@@ -7,7 +7,8 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     padding: 0;
     display: flex;
     flex-direction: column;
-    
+    padding-top: 50px; /* Ajustez selon la hauteur de .navbar */
+}
 }
 
 
