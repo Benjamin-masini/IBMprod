@@ -21,6 +21,8 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     justify-content: space-between;
     align-items: center;
     padding: 5px 15px;
+    z-index: 1000;
+   position: fixed;
 }
 .navbar-brand logo{
     width: 100%;
