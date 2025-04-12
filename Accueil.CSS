@@ -1,7 +1,7 @@
 /* FOND */
 body {
     font-family: "Century Gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, serif;
-    background-color: black;
+    background-color: black !important;
     margin: 0;
     padding: 0;
     display: flex;
