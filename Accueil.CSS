@@ -1,10 +1,11 @@
 /* FOND */
 body {
-    
+    font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif ;
+    color: black;
     padding: 0;
     display: flex;
     flex-direction: column;
-    padding-top: 50px ; /* Ajustez selon la hauteur de .navbar */
+    
 }
 
 /* MENU */
@@ -13,7 +14,7 @@ body {
     color: white; /* Couleur du texte */
     padding: 10px;
     text-align: center;
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
