@@ -9,11 +9,11 @@ body {
 
 /* MENU */
 .navbar {
-    background-color: #001f3f; /* Bleu marine */
+    background-color: #001f3f !important; /* Bleu marine */
     color: white; /* Couleur du texte */
     padding: 10px;
     text-align: center;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
