@@ -15,7 +15,6 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 
 .navbar navbar-expand-lg navbar-light bg-light{
     background-color: #333;
-    color: #000000;
     width: 1319px;
     height: 100px;
     display: flex;
@@ -29,7 +28,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 
 .nav-item{
-    color: #fff;
+    color: #fffffff;
     text-decoration: none;
     padding: 10px 12px;
     transition: background-color 0.3s;
