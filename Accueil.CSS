@@ -11,11 +11,11 @@ body {
 
 /* MENU */
 .navbar {
-    background-color: #333;
+    background-color: #333 !important;
     color: Black;
     padding: 10px;
     text-align: center;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
