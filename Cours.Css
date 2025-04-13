@@ -9,10 +9,10 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 
 .emoji {
-    position: fixed;
+    position: absolue;
     right: 0; /* Position à droite */
     top: 50%; /* Position au milieu verticalement */
-    transform: translateY(-50%); /* Centrage vertical */
+    with: 20%
 }
 
 
