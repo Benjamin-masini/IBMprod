@@ -45,6 +45,12 @@ footer {
     body{
         flex-direction: column;
     }
+    .emoji {
+    position: fixed;
+    right: 0; /* Position à droite */
+    top: 50%;
+    width: 50px;
+}
    
     footer{
         width: auto;
