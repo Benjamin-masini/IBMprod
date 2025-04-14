@@ -1,14 +1,7 @@
 /* FOND*/
 body{ 
     font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ,serif ;
-    background: url(PHOTOS/Img1.jpg);
-    background-repeat : no-repeat;
-    background-size:calc(100%) ;
-    background-attachment: fixed , scroll; 
-    scroll-behavior: auto;
-    
-    color: darkgoldenrod;
-    box-sizing :border-box;
+    background-color: white;
     
 }
 
