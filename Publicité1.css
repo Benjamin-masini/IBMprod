@@ -17,7 +17,7 @@ color: #2a77dd;
 }
 .Details a{
     text-decoration-line: none;
-    color: white;
+    color: #2a77dd;
 }
 
 /*COOPYIGHT*/ 
@@ -36,6 +36,16 @@ footer {
     body{
         flex-direction: column;
     }
+    h1{
+font-size: 45px;
+color: #2a77dd;
+}
+    .homme {
+    position: fixed;
+    right: 0; /* Position à droite */
+    top: 50%;
+    width: 50px;
+}
    
     footer{
         width: auto;
