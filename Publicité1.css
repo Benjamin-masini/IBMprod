@@ -11,6 +11,10 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     width: 300px;
 }
 
+h1{
+font-size: 45px;
+color: #2a77dd;
+}
 .Details a{
     text-decoration-line: none;
     color: white;
