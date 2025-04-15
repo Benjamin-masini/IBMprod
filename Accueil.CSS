@@ -8,7 +8,7 @@ body {
 /* MENU */
 .navbar {
     background:#333 !important;
-    color: #001f3f; /* Couleur du texte */
+    color:  white; /* Couleur du texte */
     padding: 5px;
     text-align: center;
     position: fixed;
@@ -63,7 +63,7 @@ h2 {
     text-align: center;
     font-size: 50px;
     margin: 20px;
-    top: 30%;
+    top: 30;
 }
 
 .service {
