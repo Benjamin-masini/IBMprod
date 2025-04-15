@@ -9,13 +9,13 @@ body {
 .navbar {
     
     color: #001f3f; /* Couleur du texte */
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     with: 20%;
-    width: 100%;
+    height:50%;
     z-index: 1000;
 }
 
@@ -97,6 +97,8 @@ footer {
         top: 60px;
         left: 0;
         background-color: #333;
+        padding: 5px; /* Ajuster le padding pour mobile */
+        height: 50px; /* Ajuster la hauteur pour mobile */
     }
 
     .menu.active {
