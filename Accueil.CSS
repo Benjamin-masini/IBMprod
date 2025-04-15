@@ -63,7 +63,7 @@ h2 {
     text-align: center;
     font-size: 50px;
     margin: 20px;
-    position: fixed;
+    position: relative;
 }
 
 .service {
@@ -100,6 +100,7 @@ footer {
         background-color: #333;
         padding: 5px; /* Ajuster le padding pour mobile */
         height: 50px; /* Ajuster la hauteur pour mobile */
+        position: fixed;
     }
 
     .menu.active {
