@@ -8,7 +8,7 @@ body {
 /* MENU */
 .navbar {
     
-    color: #333; /* Couleur du texte */
+    color: #001f3f; /* Couleur du texte */
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -19,7 +19,7 @@ body {
 }
 
 .navbar-brand .logo {
-    width: 100%;
+    width: 80%;
     height: 80px;
 }
 
