@@ -11,7 +11,7 @@ body {
     color: #001f3f; /* Couleur du texte */
     padding: 5px;
     text-align: center;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     height:20%;
