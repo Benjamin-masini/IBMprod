@@ -7,8 +7,8 @@ body {
 
 /* MENU */
 .navbar {
-    background-color: #001f3f !important; /* Bleu marine */
-    color: white; /* Couleur du texte */
+    
+    color: #333; /* Couleur du texte */
     padding: 10px;
     text-align: center;
     position: fixed;
