@@ -34,6 +34,9 @@ body {
 .nav-item:hover {
     background-color: #575757;
 }
+.nav-link{
+color: white;
+}
 
 .menu-icon {
     display: none;
