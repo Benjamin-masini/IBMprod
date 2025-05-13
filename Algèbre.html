@@ -9,9 +9,12 @@
         /* FOND*/
 body{ 
     font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ,serif ;
-    
-     margin: auto;
-    padding: 0;
+    background: url(PHOTOS/ALGBRE\ \(1\).PNG);
+    background-size: cover; /* L'image couvre toute la page */
+    background-repeat: no-repeat; /* Évite les répétitions */
+    background-attachment: fixed; /* Fixe l'image pour qu'elle reste visible */
+    margin: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -23,6 +26,7 @@ a{
 }
 /*COOPYIGHT*/ 
 footer { 
+    margin-top: auto; /* Place le footer automatiquement en bas */
     font-family:oblique;
     color: white;
     text-align: center;
@@ -33,9 +37,9 @@ footer {
 @media (max-width: 768px) {
     body{
         flex-direction: column;
-        background: url(PHOTOS/ALGBRE\ \(1\).PNG);
-        width: 100%;
-
+        
+         background-size: contain; /* L'image est entièrement visible */
+        background-position: center; /* Centre l'image */
     }
    
     footer{
