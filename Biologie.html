@@ -23,12 +23,28 @@ a{
 }
 /*COOPYIGHT*/ 
 footer { 
-    font-family: oblique;
+    margin-top: 26%; /* Place le footer automatiquement en bas */
+    font-family:oblique;
     color: white;
     text-align: center;
-    float: left;
-    top: 80%;
-    left: 40%;
+    padding: 10px 0;
+    background-color: #333;
+    position: relative;
+}
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    body{
+      
+         background-size: contain; /* L'image est entièrement visible */
+        background-position: center; /* Centre l'image */
+    }
+   
+    footer{
+    width: 100%;
+
+      
+     
+   }
 }
     </style>
     
