@@ -18,7 +18,7 @@ body {
     z-index: 100;
 }
 
-.navbar-brand .logo {
+.navbar-brand logo {
     width: 50%;
     height: 50px;
 }
@@ -89,7 +89,7 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
 
-    .navbar-brand .logo {
+    .navbar-brand logo {
         width: 20%;
         height: 40px;
     }
@@ -104,7 +104,7 @@ footer {
         display: flex;
     }
 
-    .menu-icon {
+    .navbar-toogher-icon {
         display: block;
         color: red !important ; /* Bouton blanc en mode mobile */
     }
