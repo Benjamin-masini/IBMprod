@@ -109,6 +109,10 @@ footer {
         padding: 15px;
         border-top: 1px solid #444;
     }
+
+.service {
+    padding: auto;
+}
 .bienvenu {
     color: darkgoldenrod;
     text-align: center;
