@@ -20,7 +20,7 @@ body {
     z-index: 100;
 }
 
-.navbar logo {
+.navbar-brand logo {
     width: 50%;
     height: 50px;
 }
@@ -99,8 +99,8 @@ footer {
     /* Adapter les autres éléments aussi */
   }
     
-  .nav logo {
-        width:auto;
+  .navbar-brand logo {
+        width:auto !important;
         height: 10px;
     }
     
