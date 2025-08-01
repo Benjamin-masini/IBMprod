@@ -99,7 +99,8 @@ footer {
   
     
   .navbar-brand logo {
-        width:auto !important;
+        font-size: 50px;
+        width:auto;
         height: 10px;
     }
     
