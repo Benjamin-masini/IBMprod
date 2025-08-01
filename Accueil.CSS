@@ -91,7 +91,15 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
 
-    .navbar-brand logo {
+  body {
+    font-size: 14px;
+    /* Adapter d'autres propriétés si besoin */
+      padding: 5px;
+    }
+    /* Adapter les autres éléments aussi */
+  }
+    
+  .navbar-brand logo {
         width:auto;
         height: 10px;
     }
