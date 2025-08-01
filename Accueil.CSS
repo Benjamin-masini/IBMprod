@@ -89,7 +89,7 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
 
-    .navbar-brand logo {
+    .navbar-brand .logo {
         width: 10%;
         height: 40px;
     }
