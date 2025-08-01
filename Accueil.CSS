@@ -106,7 +106,7 @@ footer {
 
     .menu-icon {
         display: block;
-        color: white !important ; /* Bouton blanc en mode mobile */
+        color: red !important ; /* Bouton blanc en mode mobile */
     }
 
     .menu a {
