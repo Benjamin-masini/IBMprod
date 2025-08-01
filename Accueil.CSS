@@ -91,13 +91,12 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
 
-  body {
+  .service {
     font-size: 14px;
-    /* Adapter d'autres propriétés si besoin */
       padding: 5px;
     }
-    /* Adapter les autres éléments aussi */
-  }
+    
+  
     
   .navbar-brand logo {
         width:auto !important;
@@ -120,9 +119,7 @@ footer {
         border-top: 1px solid #444;
     }
 
-.service {
-    padding: auto;
-}
+
 .bienvenu {
     color: darkgoldenrod;
     text-align: center;
