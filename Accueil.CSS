@@ -93,7 +93,10 @@ footer {
         width: 10%;
         height: 40px;
     }
-
+    .navbar-toggler {
+        background-color: #fff !important;   /* Fond blanc */
+        border-color: #fff !important;       /* Bordure blanche */
+    }
     .menu.active {
         display: flex;
     }
