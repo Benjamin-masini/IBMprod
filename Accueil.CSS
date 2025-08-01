@@ -94,20 +94,11 @@ footer {
         height: 40px;
     }
 
-    .navbar {
-      
-      
-      
-    }
-
     .menu.active {
         display: flex;
     }
 
-    .navbar-toggler {
-        display: block;
-        color: white ; /* Bouton blanc en mode mobile */
-    }
+  
 
     .menu a {
         text-align: center;
