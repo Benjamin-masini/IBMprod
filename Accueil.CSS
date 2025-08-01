@@ -89,10 +89,11 @@ footer {
 /* Styles pour mobile */
 @media (max-width: 768px) {
 
-    .navbar-brand .logo {
-        width: 10%;
+    .navbar-brand logo {
+        width: 10px;
         height: 40px;
     }
+    
     .navbar-toggler {
         background-color: #fff !important;   /* Fond blanc */
         border-color: #fff !important;       /* Bordure blanche */
