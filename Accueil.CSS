@@ -90,8 +90,8 @@ footer {
 @media (max-width: 768px) {
 
     .navbar-brand logo {
-        margin-left: 0;
-        height: 40px;
+        width:auto;
+        height: 30px;
     }
     
     .navbar-toggler {
