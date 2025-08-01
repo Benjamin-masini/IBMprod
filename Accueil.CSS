@@ -106,7 +106,7 @@ footer {
 
     .navbar-toggler {
         display: block;
-        color: white !important ; /* Bouton blanc en mode mobile */
+        color: white ; /* Bouton blanc en mode mobile */
     }
 
     .menu a {
