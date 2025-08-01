@@ -90,7 +90,7 @@ footer {
 @media (max-width: 768px) {
 
     .navbar-brand logo {
-        width: 20%;
+        width: 10%;
         height: 40px;
     }
 
@@ -104,9 +104,9 @@ footer {
         display: flex;
     }
 
-    .navbar-toogher-icon {
+    .navbar-toggler {
         display: block;
-        color: red !important ; /* Bouton blanc en mode mobile */
+        color: white !important ; /* Bouton blanc en mode mobile */
     }
 
     .menu a {
