@@ -15,10 +15,15 @@ h1{
     font-size : 300%;
     text-align : center ;
 }
-h2{ color:darkgoldenrod;}
-h3{color: darkgoldenrod; }
+h2{ color:darkgoldenrod;
+}
+h3{color: darkgoldenrod; 
+}
 #Connexion:hover { color: white;
-} 
+}
+.a{ text-color: white;
+text
+}
 #Connexion{
  background-color: darkgoldenrod;
  color: black;
@@ -32,4 +37,5 @@ footer {
     top: 80%;
     left: 40%;
        
+
 }
