@@ -21,8 +21,7 @@ h3{color: darkgoldenrod;
 }
 #Connexion:hover { color: white;
 }
-.a{ text-color: white;
-text
+a{ text-color: white;
 }
 #Connexion{
  background-color: darkgoldenrod;
@@ -39,3 +38,4 @@ footer {
        
 
 }
+
