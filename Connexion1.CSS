@@ -25,11 +25,11 @@ h3{color: darkgoldenrod;
 #Connexion:hover { color: white;
 }
 
-lien {
+.lien {
   color: #ffff;
   text-decoration: none;
   text-align: none;
-   padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 
@@ -48,6 +48,7 @@ footer {
        
 
 }
+
 
 
 
