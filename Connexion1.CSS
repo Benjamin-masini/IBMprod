@@ -30,11 +30,6 @@ h3{color: darkgoldenrod;
   text-decoration: underline; /* optionnel : souligne le lien */
 }
 
-/* Pour changer la couleur au survol */
-.lien:hover {
-  color: #0080ff; /* Couleur au survol, ici bleu */
-}
-
 
 #Connexion{
  background-color: darkgoldenrod;
@@ -51,6 +46,7 @@ footer {
        
 
 }
+
 
 
 
