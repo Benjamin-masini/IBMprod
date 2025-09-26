@@ -26,7 +26,7 @@ h3{color: darkgoldenrod;
 }
 
 p1 {
-  color: #ff6600; /* Choisis ta couleur, ici orange */
+  text-color: white; /* Choisis ta couleur, ici orange */
   text-decoration: underline; /* optionnel : souligne le lien */
 }
 
@@ -51,6 +51,7 @@ footer {
        
 
 }
+
 
 
 
