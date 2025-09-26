@@ -25,13 +25,13 @@ h3{color: darkgoldenrod;
 #Connexion:hover { color: white;
 }
 
-p1 {
+.lien {
   text-color: white; /* Choisis ta couleur, ici orange */
   text-decoration: underline; /* optionnel : souligne le lien */
 }
 
 /* Pour changer la couleur au survol */
-p1:hover {
+.lien:hover {
   color: #0080ff; /* Couleur au survol, ici bleu */
 }
 
@@ -51,6 +51,7 @@ footer {
        
 
 }
+
 
 
 
