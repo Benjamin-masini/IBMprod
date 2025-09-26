@@ -25,7 +25,7 @@ h3{color: darkgoldenrod;
 #Connexion:hover { color: white;
 }
 
-div lien{
+.option{
   color: #ffff;
   text-decoration: none;
   text-align: none;
@@ -48,6 +48,7 @@ footer {
        
 
 }
+
 
 
 
