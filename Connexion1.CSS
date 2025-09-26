@@ -7,8 +7,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
     background-repeat :repeat;
     box-sizing :border-box;
 }
-section 
-{color: darkgoldenrod ; } 
+
 
 h1{
     color: darkgoldenrod ;
@@ -26,7 +25,7 @@ h3{color: darkgoldenrod;
 #Connexion:hover { color: white;
 }
 
-.Lien{ text-color: white;
+Lien{ text-color: white;
 }
 
 #Connexion{
@@ -44,6 +43,7 @@ footer {
        
 
 }
+
 
 
 
