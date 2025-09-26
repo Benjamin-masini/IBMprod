@@ -26,8 +26,8 @@ h3{color: darkgoldenrod;
 }
 
 .lien {
-  text-color: white; /* Choisis ta couleur, ici orange */
-  text-decoration: none; /* optionnel : souligne le lien */
+  color: white;
+  text-decoration: none; 
 }
 
 
@@ -46,6 +46,7 @@ footer {
        
 
 }
+
 
 
 
