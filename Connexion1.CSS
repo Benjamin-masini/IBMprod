@@ -9,20 +9,26 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 section 
 {color: darkgoldenrod ; } 
+
 h1{
     color: darkgoldenrod ;
     text-decoration:underline ;
     font-size : 300%;
     text-align : center ;
 }
+
 h2{ color:darkgoldenrod;
 }
+
 h3{color: darkgoldenrod; 
 }
+
 #Connexion:hover { color: white;
 }
-.a{ text-color: white;
+
+a{ text-color: white;
 }
+
 #Connexion{
  background-color: darkgoldenrod;
  color: black;
@@ -38,5 +44,6 @@ footer {
        
 
 }
+
 
 
