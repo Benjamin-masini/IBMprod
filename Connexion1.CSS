@@ -40,7 +40,8 @@ h3{color: darkgoldenrod;
     font-style:oblique;
     color:darkgoldenrod;
     text-align: center;
-    float: absolute;
+    position: absolute;
     top: 80%;
-    left: 40%;
+    left: 50%;
+    transform:translateX(-50%);
 }
