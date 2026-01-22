@@ -25,9 +25,9 @@ h3{color: darkgoldenrod;
 }
 
 .option a{
-  color: #ffff;!important
-  text-decoration: inderline;
-  text-align: none;
+  color: #fff !important;
+  text-decoration: underline;
+  text-align: center;
   
 }
 
