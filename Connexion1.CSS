@@ -9,8 +9,10 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 
 
 .img{
-    max-width: 25% ;
+    max-width: 20% ;
     height: auto;
+    display: bloc;
+    
 
 }
 
@@ -46,6 +48,7 @@ footer {
        
 
 }
+
 
 
 
