@@ -11,7 +11,9 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 .img{
     max-width: 20% ;
     height: auto;
-    position: center;
+    top: 80%;
+    left: 40%;
+    
 }
 
 h2{ color:darkgoldenrod;
@@ -46,6 +48,7 @@ footer {
        
 
 }
+
 
 
 
