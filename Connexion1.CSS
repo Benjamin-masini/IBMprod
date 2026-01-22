@@ -8,7 +8,7 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 }
 
 
-h1{
+.img{
     max-width: 100% ;
     height: auto;
     display: block;
@@ -41,12 +41,13 @@ footer {
     font-style:oblique;
     color:darkgoldenrod;
     text-align: center;
-    Position: absolute;
+    float: absolute;
     top: 80%;
     left: 40%;
        
 
 }
+
 
 
 
