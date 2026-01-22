@@ -9,11 +9,10 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 
 
 .img{
+    display: block;
+    margin: 0 auto;
     max-width: 20% ;
     height: auto;
-    top: 80%;
-    left: 40%;
-    
 }
 
 h2{ color:darkgoldenrod;
@@ -37,57 +36,11 @@ h3{color: darkgoldenrod;
  background-color: darkgoldenrod;
  color: black;
  padding: 5px 10px;
-}
-footer { 
+}footer { 
     font-style:oblique;
     color:darkgoldenrod;
     text-align: center;
     float: absolute;
     top: 80%;
     left: 40%;
-       
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
