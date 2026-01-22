@@ -10,8 +10,10 @@ body{ font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Treb
 
 
 h1{
-    width: 100% ;
-    heith: auto;
+    max-width: 100% ;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 h2{ color:darkgoldenrod;
@@ -23,7 +25,7 @@ h3{color: darkgoldenrod;
 #Connexion:hover { color: white;
 }
 
-.option{
+.option a{
   color: #ffff;!important
   text-decoration: inderline;
   text-align: none;
@@ -37,15 +39,16 @@ h3{color: darkgoldenrod;
  padding: 5px 10px;
 }
 footer { 
-    font-family:oblique;
+    font-style:oblique;
     color:darkgoldenrod;
     text-align: center;
-    float: absolute;
+    Position: absolute;
     top: 80%;
     left: 40%;
        
 
 }
+
 
 
 
