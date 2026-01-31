@@ -1,39 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=devise-width, initial-scale=1.0">
-        <title>IBMprod</title>
-        <link rel="stylesheet"type="text/css"href="Insc.css"/>
-    </head>
-    <body>
-      
-                              <input type="radio" id="Homme" name="sexe" value="Homme">
-                                   <label for="Homme">Homme</label><br>
-        
-                              <input type="radio" id="Femme" name="sexe" value="Femme">
-                                   <label for="Femme">Femme</label><br>
-        
-                              <input type="date" name="Age" id ="date" class="form-control" max="2010" min="1919"required="required"><br>
-                                    <label for="Age"></label>
-        
-                              <input type ="email" id="email" name="mail" placeholder="adresse électronique" maxlength="30" autofocus="autofocus" required="required"><br>
-                                    <label for="email">Email:</label>
-        
-                              <input type =nom" id="Nom" name="text" placeholder="Nom" maxlength="30" autofocus="autofocus" required="required"><br>
-                                    <label for="text">Nom:</label>
-        
-                                
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription - IBMprod</title>
+    <link rel="stylesheet" type="text/css" href="Insc.css" />
+    <style>
+      /* Styles minimaux pour lisibilité si Insc.css absent */
+      .container{max-width:640px;margin:24px auto;padding:16px;border:1px solid #ddd;border-radius:6px;background:#fff}
+      .field{margin-bottom:12px}
+      label{display:block;margin-bottom:6px;font-weight:600}
+      input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"], select, textarea{
+        width:100%;padding:8px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box
+      }
+      .row{display:flex;gap:12px}
+      .row .col{flex:1}
+      .actions{margin-top:14px}
+      .error{color:#c00;font-size:0.9rem}
+    </style>
+</head>
+<body>
+  <main class="container" aria-labelledby="signup-title">
+    <h1 id="signup-title">Créer un compte</h1>
 
-     <!--FOOTER veut dire bas.texte du bas de la page-->
-     
-     <footer>
-          <p>ibmprod45@gmail.com | IBMprod | +243853193403</p>
-          <p>copyright &copy;BEBOL2022 par IBMprod</p>
-     </footer>
+    <form id="signup-form" action="process_registration.php" method="post" novalidate>
+      <!-- Si vous utilisez PHP, pensez à insérer un token CSRF côté serveur -->
 
+      <div class="row">
+        <div class="col field">
+          <label for="firstname">Prénom</label>
+          <input type="text" id="firstname" name="firstname" autocomplete="given-name" maxlength="50" required />
+        </div>
+        <div class="col field">
+          <label for="lastname">Nom</label>
+          <input type="text" id="lastname" name="lastname" autocomplete="family-name" maxlength="50" required />
+        </div>
+      </div>
 
+      <div class="field">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" name="email" autocomplete="email" maxlength="100" placeholder="exemple@domaine.com" required />
+      </div>
 
+      <div class="row">
+        <div class="col field">
+          <label for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="8"
+            pattern="(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*"
+            placeholder="Au moins 8 caractères, 1 majuscule, 1 chiffre"
+            autocomplete="new-password"
+            required
+          />
+        </div>
+        <div class="col field">
+          <label for="password_confirm">Confirmez le mot de passe</label>
+          <input type="password" id="password_confirm" name="password_confirm" autocomplete="new-password" required />
+        </div>
+      </div>
 
+      <div class="field">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" placeholder="+243 8xx xxx xxx" pattern="^\+?[0-9\s\-]{6,20}$" autocomplete="tel" />
+      </div>
 
+      <div class="field">
+        <label for="birthdate">Date de naissance</label>
+        <input type="date" id="birthdate" name="birthdate" min="1919-01-01" max="2010-12-31" />
+      </div>
+
+      <fieldset class="field" aria-labelledby="address-legend">
+        <legend id="address-legend">Adresse de facturation</legend>
+        <div class="field">
+          <label for="address">Adresse</label>
+          <input type="text" id="address" name="address" autocomplete="address-line1" maxlength="200" />
+        </div>
+        <div class="row">
+          <div class="col field">
+            <label for="city">Ville</label>
+            <input type="text" id="city" name="city" autocomplete="address-level2" />
+          </div>
+          <div class="col field">
+            <label for="postal">Code postal</label>
+            <input type="text" id="postal" name="postal" autocomplete="postal-code" pattern="[0-9A-Za-z\s\-]{2,12}" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="country">Pays</label>
+          <select id="country" name="country" autocomplete="country">
+            <option value="">Sélectionnez votre pays</option>
+            <option value="CD">République démocratique du Congo</option>
+            <option value="FR">France</option>
+            <option value="US">États-Unis</option>
+            <!-- Ajouter d'autres pays selon besoin -->
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label>Sexe</label>
+        <label><input type="radio" name="gender" value="M" /> Homme</label>
+        <label><input type="radio" name="gender" value="F" /> Femme</label>
+        <label><input type="radio" name="gender" value="O" /> Préfère ne pas dire</label>
+      </div>
+
+      <div class="field">
+        <label><input type="checkbox" id="newsletter" name="newsletter" value="1" /> Je souhaite recevoir les offres et la newsletter</label>
+      </div>
+
+      <div class="field">
+        <label><input type="checkbox" id="terms" name="terms" required /> J'accepte les conditions d'utilisation et la politique de confidentialité</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit">S'inscrire</button>
+        <button type="reset" form="signup-form">Effacer</button>
+      </div>
+
+      <p class="error" id="form-error" aria-live="polite" style="display:none"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>ibmprod45@gmail.com | IBMprod | +243853193403</p>
+    <p>copyright &copy;BEBOL2022 par IBMprod</p>
+  </footer>
+
+  <script>
+    // Validation additionnelle côté client (mot de passe identique)
+    document.getElementById('signup-form').addEventListener('submit', function(e){
+      const pwd = document.getElementById('password').value;
+      const pwd2 = document.getElementById('password_confirm').value;
+      const err = document.getElementById('form-error');
+      if(pwd !== pwd2){
+        e.preventDefault();
+        err.style.display = 'block';
+        err.textContent = 'Les mots de passe ne correspondent pas.';
+        document.getElementById('password_confirm').focus();
+        return false;
+      }
+      // Vous pouvez ajouter d'autres contrôles ici (ex: force mot de passe, téléphone valide)
+      err.style.display = 'none';
+      return true;
+    });
+  </script>
+</body>
+</html>
