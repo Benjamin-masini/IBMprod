@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="Insc.css" />
     <style>
       /* Styles minimaux pour lisibilité si Insc.css absent */
+      html, body { height: 100%; }
+      body { margin:0; padding-bottom:120px; }
       .container{max-width:640px;margin:24px auto;padding:16px;border:1px solid #ddd;border-radius:6px;background:#fff}
       .field{margin-bottom:12px}
       label{display:block;margin-bottom:6px;font-weight:600}
@@ -17,6 +19,20 @@
       .row .col{flex:1}
       .actions{margin-top:14px}
       .error{color:#c00;font-size:0.9rem}
+
+      /* Footer fixé en bas de l'écran */
+      footer{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        background:#f8f8f8;
+        padding:12px 16px;
+        text-align:center;
+        box-shadow:0 -1px 6px rgba(0,0,0,0.08);
+        z-index:1000;
+      }
     </style>
 </head>
 <body>
