@@ -1,0 +1,9 @@
+footer { 
+    font-style:oblique;
+    color:darkgoldenrod;
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform:translateX(-50%);
+}
