@@ -1,9 +1,353 @@
-footer { 
-    font-style:oblique;
-    color:darkgoldenrod;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "century gothic", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, serif;
+    background: linear-gradient(135deg, rgb(11, 41, 131) 0%, rgb(25, 60, 180) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container { 
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.recovery-wrapper { 
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-section {
     text-align: center;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform:translateX(-50%);
+    margin-bottom: 30px;
+}
+
+.logo-section img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.logo-section h1 {
+    color: rgb(11, 41, 131);
+    font-size: 32px;
+    margin: 10px 0 0 0;
+    font-weight: bold;
+}
+
+.recovery-form h2 {
+    color: rgb(11, 41, 131);
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recovery-form .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-step {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.form-step.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(11, 41, 131);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: darkgoldenrod;
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
+}
+
+.password-strength {
+    margin: 20px 0;
+}
+
+.strength-meter {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.strength-meter-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #dc3545;
+    transition: width 0.3s, background-color 0.3s;
+    border-radius: 3px;
+}
+
+.strength-text {
+    font-size: 12px;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: rgb(184, 134, 11);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: rgb(11, 41, 131);
+    border: 2px solid rgb(11, 41, 131);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: rgb(11, 41, 131);
+    color: white;
+}
+
+.btn-secondary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert.hidden {
+    display: none;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.success-message {
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #28a745;
+    margin-bottom: 20px;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.success-message h3 {
+    color: rgb(11, 41, 131);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.form-footer p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.form-footer a {
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.form-footer a:hover {
+    color: rgb(184, 134, 11);
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* FOOTER */
+footer { 
+    font-style: oblique;
+    color: darkgoldenrod;
+    text-align: center;
+    background-color: transparent;
+    padding: 20px 10px;
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer p1, footer pA, footer pB { 
+    display: block;
+    font-size: 13px;
+    margin: 3px 0;
+}
+
+footer p2 { 
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .recovery-wrapper {
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .logo-section img {
+        max-width: 100px;
+    }
+
+    .logo-section h1 {
+        font-size: 24px;
+    }
+
+    .recovery-form h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 15px 5px;
+    }
+
+    footer p1, footer pA, footer pB {
+        font-size: 11px;
+    }
+
+    footer p2 {
+        font-size: 10px;
+    }
 }
