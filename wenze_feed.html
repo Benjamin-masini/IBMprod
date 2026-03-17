@@ -13,44 +13,60 @@
 </head>
 
 <body>
-    <header>
-        <h1>IBMwenze</h1>
-        <div class="cart">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount">0</span>
+    <header class="header">
+        <div class="logo">🛍️ IBMwenze</div>
+    
+        <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+    
+        <div class="header-actions">
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </div>
         </div>
+
     </header>
 
     <main>
 
         <!-- 🔍 Recherche -->
         <input type="text" id="searchInput" placeholder="Rechercher un produit...">
-
-        <!-- 🎛️ Filtres -->
-        <div class="filters">
-            <select id="categoryFilter">
-                <option value="">Toutes catégories</option>
-                <option value="électronique">Électronique</option>
-                <option value="vêtements">Vêtements</option>
-                <option value="maison">Maison</option>
-                <option value="sport">Sport</option>
-                <option value="beauté">Beauté</option>
-            </select>
-
-            <select id="priceFilter">
-                <option value="">Tous les prix</option>
-                <option value="0-50">0 - 50€</option>
-                <option value="50-100">50 - 100€</option>
-                <option value="100-500">100 - 500€</option>
-                <option value="500+">500€+</option>
-            </select>
-
-            <select id="sortFilter">
-                <option value="">Trier par</option>
-                <option value="price-asc">Prix croissant</option>
-                <option value="price-desc">Prix décroissant</option>
-                <option value="rating">Meilleures notes</option>
-            </select>
+        
+        <div class="container">
+          
+            <aside class="sidebar">
+                <h3>Filtres</h3>
+        
+                <label>Catégorie</label>
+                <select id="categoryFilter">
+                    <option value="">Toutes</option>
+                    <option value="électronique">Électronique</option>
+                    <option value="vêtements">Vêtements</option>
+                    <option value="maison">Maison</option>
+                    <option value="sport">Sport</option>
+                    <option value="beauté">Beauté</option>
+                </select>
+        
+                <label>Prix</label>
+                <select id="priceFilter">
+                    <option value="">Tous</option>
+                    <option value="0-50">0-50€</option>
+                    <option value="50-100">50-100€</option>
+                    <option value="100-500">100-500€</option>
+                    <option value="500+">500€+</option>
+                </select>
+        
+                <label>Trier</label>
+                <select id="sortFilter">
+                    <option value="">Défaut</option>
+                    <option value="price-asc">Prix ↑</option>
+                    <option value="price-desc">Prix ↓</option>
+                    <option value="rating">Top notes</option>
+                </select>
+            </aside>
+        
+            <section id="productsFeed" class="products-grid"></section>
+        
         </div>
 
         <!-- 🛍️ Feed produits -->
