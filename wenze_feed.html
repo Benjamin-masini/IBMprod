@@ -1,35 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wenze Feed</title>
-    <!-- This section includes stylesheets and other metadata -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="wenze_feed.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <h1>Wenze Feed</h1>
-        <!-- Header section with the title of the page -->
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span>
+        </div>
     </header>
+
     <main>
-        <section id="feed">
-            <h2>Latest Posts</h2>
-            <!-- Main section displaying the latest posts -->
-            <article>
-                <h3>Post Title</h3>
-                <p>Content of the post goes here...</p>
-                <!-- Each article represents a single post with a title and content -->
-            </article>
-            <!-- More posts can be added here -->
+
+        <!-- 🔍 Recherche -->
+        <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+
+        <!-- 🎛️ Filtres -->
+        <div class="filters">
+            <select id="categoryFilter">
+                <option value="">Toutes catégories</option>
+                <option value="électronique">Électronique</option>
+                <option value="vêtements">Vêtements</option>
+                <option value="maison">Maison</option>
+                <option value="sport">Sport</option>
+                <option value="beauté">Beauté</option>
+            </select>
+
+            <select id="priceFilter">
+                <option value="">Tous les prix</option>
+                <option value="0-50">0 - 50€</option>
+                <option value="50-100">50 - 100€</option>
+                <option value="100-500">100 - 500€</option>
+                <option value="500+">500€+</option>
+            </select>
+
+            <select id="sortFilter">
+                <option value="">Trier par</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="rating">Meilleures notes</option>
+            </select>
+        </div>
+
+        <!-- 🛍️ Feed produits -->
+        <section id="productsFeed">
+            <h2>Produits</h2>
         </section>
+        
+        <section id="cartSection">
+            <h2>🛒 Panier</h2>
+            <div id="cartItems"></div>
+            <h3 id="cartTotal">Total : 0€</h3>
+        </section>
+
     </main>
+
     <footer>
-          <p>ibmprod45@gmail.com | IBMprod | +243853193403</p>
-          <p>copyright &copy;BEBOL2022 par IBMprod</p>
+        <p>ibmprod45@gmail.com | IBMprod | +243853193403</p>
+        <p>copyright &copy; BEBOL2022 par IBMprod</p>
     </footer>
-     <!-- Lien vers le fichier JavaScript -->
+
+    <!-- JS -->
     <script src="wenze_feed.js"></script>
 </body>
 </html>
