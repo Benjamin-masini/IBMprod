@@ -110,3 +110,27 @@ body {
     top: -8px;
     right: -8px;
 }
+
+/* FOOTER */
+footer {
+    font-style: oblique;
+    color: darkgoldenrod;
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+footer p1, footer pA, footer pB {
+    display: block;
+    font-size: 13px;
+    color: white;
+    margin: 3px 0;
+}
+
+footer p2 {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
