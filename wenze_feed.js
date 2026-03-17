@@ -105,12 +105,13 @@ function filterProducts() {
     const category = document.getElementById('categoryFilter').value;
     const priceRange = document.getElementById('priceFilter').value;
     const sortBy = document.getElementById('sortFilter').value;
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
     let filtered = products.filter(product => {
 
         let categoryMatch = !category || product.category === category;
-        let priceMatch = true;
 
+        let priceMatch = true;
         if (priceRange) {
             if (priceRange === '0-50') priceMatch = product.price <= 50;
             if (priceRange === '50-100') priceMatch = product.price > 50 && product.price <= 100;
@@ -118,15 +119,32 @@ function filterProducts() {
             if (priceRange === '500+') priceMatch = product.price > 500;
         }
 
-        return categoryMatch && priceMatch;
+        let searchMatch =
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm);
+
+        return categoryMatch && priceMatch && searchMatch;
     });
 
+    // TRI
     if (sortBy === 'price-asc') filtered.sort((a, b) => a.price - b.price);
     if (sortBy === 'price-desc') filtered.sort((a, b) => b.price - a.price);
     if (sortBy === 'rating') filtered.sort((a, b) => b.rating - a.rating);
 
     displayProducts(filtered);
 }
+
+const search = document.getElementById('searchInput');
+
+if (search) {
+    search.addEventListener('input', filterProducts);
+}
+
+let timeout;
+search.addEventListener('input', () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(filterProducts, 300);
+});
 
 // PANIER
 function addToCart(productId) {
