@@ -28,6 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+
+    const existing = cart.find(item => item.id === productId);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+
+    saveCart();
+    updateCartUI();
+
+    // UX MODERNE
+    alert(`🛒 ${product.name} ajouté !`);
+}
+
 // AFFICHAGE PRODUITS
 function displayProducts(productsToDisplay = products) {
     const feedContainer = document.getElementById('productsFeed');
