@@ -49,16 +49,33 @@ body {
 }
 
 /* SIDEBAR */
+/* Cibler la section des filtres et l'afficher en flex */
 .sidebar {
-    width: 220px;
-    background: white;
-    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Laisser la disposition actuelle pour la structure générale */
 }
 
-.sidebar select {
-    width: 100%;
-    margin-bottom: 15px;
+.filters-wrapper {
+    display: flex;
+    gap: 20px; /* Espacement entre les filtres */
+    flex-wrap: wrap; /* Permet aux filtres de se déplacer sur une nouvelle ligne sur les petits écrans */
+    margin-bottom: 20px; /* Marge sous les filtres */
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-item label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter-item select {
     padding: 8px;
+    font-size: 14px;
+    min-width: 150px; /* Fixer la largeur minimale pour les select */
 }
 
 /* GRID PRODUITS */
