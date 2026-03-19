@@ -244,3 +244,9 @@ function updateCartUI() {
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
+
+// Attacher l'événement au bouton "Publier"
+document.getElementById('publishButton').addEventListener('click', function() {
+    // Afficher le formulaire de publication
+    document.getElementById('publishForm').style.display = 'block';
+});
