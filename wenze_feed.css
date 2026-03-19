@@ -42,6 +42,24 @@ body {
     font-weight: bold;
 }
 
+/* Style pour le bouton Publier */
+.publish-button {
+    background-color: #4CAF50; /* Couleur verte pour le bouton */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Espacement entre le bouton et la barre de recherche */
+    width: 100%; /* Largeur à 100% pour occuper toute la ligne */
+    box-sizing: border-box; /* S'assurer que la largeur inclut le padding */
+}
+
+.publish-button:hover {
+    background-color: #45a049; /* Couleur de fond plus sombre au survol */
+}
+
 /* LAYOUT */
 .container {
     display: flex;
