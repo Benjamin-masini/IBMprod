@@ -42,35 +42,22 @@ body {
     font-weight: bold;
 }
 
-
 /* LAYOUT */
 .container {
     display: flex;
 }
 
 /* SIDEBAR */
-
 .sidebar {
     width: 220px;
     background: white;
     padding: 15px;
 }
 
-.sidebar select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 8px;
-}
-
 /* CSS pour les filtres horizontaux */
-.sidebar {
-    display: flex;
-    flex-direction: column; /* Structure générale en colonne */
-}
-
 .filters-wrapper {
     display: flex;
-    gap: 20px; /* Espace entre les filtres */
+    gap: 20px; /* Espacement entre les filtres */
     flex-wrap: wrap; /* Permet aux filtres de se réorganiser sur les petits écrans */
     margin-bottom: 20px; /* Marge sous les filtres */
 }
@@ -185,6 +172,7 @@ footer p2 {
     color: #999;
     margin-top: 10px;
 }
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     body {
@@ -207,3 +195,4 @@ footer p2 {
     .logo h1 {
         font-size: 24px;
     }
+}
