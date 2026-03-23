@@ -3,53 +3,120 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=devise-width, initial-scale=1.0">
-        <title>IBMprod|Cours</title>
+        <title>BUKU</title>
         <link rel="stylesheet"type="text/css"href="Cours.Css"/>
         <link rel="shortcut icon" type="image/x-icon" href="PHOTOS/IBMprodV.png">
+
+          <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
+
+    <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-6">
+         <!-- Header -->
+          <header class="flex justify-between items-center mb-10">
+            <h1 class="text-3xl font-bold tracking-wide">📚 IBMbuku</h1>
+            <div class="flex gap-2 items-center">
+              <input id="searchInput" type="text" placeholder="Rechercher un livre..."
+                class="bg-gray-700 px-3 py-2 rounded-lg outline-none text-white" />
+              <button onclick="searchBooks()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">🔍</button>
+            </div>
+          </header>
+        
+         <!-- Toggle Favorites -->
+          <div class="mb-6">
+            <button onclick="toggleFavorites()" class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg">
+              ⭐ Voir les favoris
+            </button>
+          </div>
         <div class= "liberte">Se former en liberté</div>
         <div class= "cours">Des cours en ligne pour découvrir, apprendre, progresser et réussir </div>
-        <div class="Explication">
-           
-            <p>
-                <ol>
-                    
-                    <li>Livres
-                        <ul>
-                            Carégories
-                            <li><a href="Adobe.html">Adobe </a></li>
-                            <li><a href="Algèbre.html">Algèbre</a></li>
-                            <li><a href="Algo.html">Algorithemique</a></li>
-                            <li><a href="Analyse.html">Analyse mathématique</a></li>
-                            <li><a href="Biologie.html">Biologie</a></li>
-                            <li><a href="Business.html">Business</a></li>
-                            <li><a href="Civisme.html">Civisme</a></li>
-                            <li><a href="Conception.html">Conception</a></li>
-                            <li><a href="Dérivé.html">Dérivé</a></li>
-                            <li><a href="Ecopol.html">Economie politique</a></li>
-                            <li><a href="Electronique.html">Electronique</a></li>
-                            <li><a href="F d'I.html">Fichiers d'installation</a></li>
-                            <li><a href="Géométrie.html">Géométrie</a></li>
-                            <li><a href="Hacking doc.html">Hacking</a></li>
-                            <li><a href="Histoire.html">Histoire</a></li>
-                            <li><a href="Informatique.html">Informatique</a></li>
-                            <li><a href="Litt.html">Littérature</a></li>
-                            <li><a href="LMD.html">Système LMD</a></li>
-                            <li><a href="Probabilité.html">Probabilité</a></li>
-                            <li><a href="Programmation.html">Programmations </a></li>
-                            <li><a href="Psychologie.html">Psychologie</a></li>
-                            <li><a href="Religion.html">Religion</a></li>
-                            <li><a href="Réseaux.html">Réseaux informatique</a></li>
-                            <li><a href="Social.html">Société</a></li>
-                            <li><a href="Statistique.html">Statistique</a></li>
-                        </ul>
-                    </li>
-                </ol>
-            </p>
 
-         </div>
-        <img src="PHOTOS/IMG-20250405-WA0009.png" alt="émoji du lecture" class="emoji">
+            <!-- Grid -->
+        <section id="bookGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></section>
+
+          <script>
+    const books = [
+      { id: 1, title: "Clean Code", author: "Robert C. Martin" },
+      { id: 2, title: "The Pragmatic Programmer", author: "Andrew Hunt" },
+      { id: 3, title: "Atomic Habits", author: "James Clear" },
+      { id: 4, title: "Deep Work", author: "Cal Newport" }
+    ];
+
+    let showFavoritesOnly = false;
+
+    function getFavorites() {
+      return JSON.parse(localStorage.getItem("favorites")) || [];
+    }
+
+    function saveFavorites(favs) {
+      localStorage.setItem("favorites", JSON.stringify(favs));
+    }
+
+    function toggleFavorite(bookId) {
+      let favs = getFavorites();
+      if (favs.includes(bookId)) {
+        favs = favs.filter(id => id !== bookId);
+      } else {
+        favs.push(bookId);
+      }
+      saveFavorites(favs);
+      displayBooks(currentList);
+    }
+
+    let currentList = books;
+
+    function displayBooks(bookList) {
+      currentList = bookList;
+      const grid = document.getElementById("bookGrid");
+      const favs = getFavorites();
+
+      grid.innerHTML = "";
+
+      let list = bookList;
+      if (showFavoritesOnly) {
+        list = bookList.filter(book => favs.includes(book.id));
+      }
+
+      list.forEach(book => {
+        const isFav = favs.includes(book.id);
+
+        const card = document.createElement("div");
+        card.className = "bg-gray-800 rounded-2xl shadow-lg p-4 hover:scale-105 transition-transform";
+
+        card.innerHTML = `
+          <div class="h-40 bg-gray-700 rounded-xl mb-4 flex items-center justify-center text-gray-400">Cover</div>
+          <h3 class="text-lg font-semibold">${book.title}</h3>
+          <p class="text-gray-400 text-sm">${book.author}</p>
+
+          <div class="flex gap-2 mt-4">
+            <button class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-lg">Lire</button>
+            <button onclick="toggleFavorite(${book.id})"
+              class="px-3 py-2 rounded-lg ${isFav ? 'bg-yellow-400' : 'bg-gray-600'}">
+              ⭐
+            </button>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function searchBooks() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = books.filter(book =>
+        book.title.toLowerCase().includes(query) ||
+        book.author.toLowerCase().includes(query)
+      );
+      displayBooks(filtered);
+    }
+
+    function toggleFavorites() {
+      showFavoritesOnly = !showFavoritesOnly;
+      displayBooks(currentList);
+    }
+
+    displayBooks(books);
+  </script>
+
     </body> 
     <footer>
         <p1>IBMprod45@gmail.com | IBMprod |+243853193403</p>
