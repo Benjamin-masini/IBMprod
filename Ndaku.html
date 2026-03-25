@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="PHOTOS/BEBOL2S.png">
 <title>IBMndaku</title>
 
@@ -27,6 +28,14 @@ header {
 button { padding: 8px; 
         margin: 5px; 
         cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #3498db;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.97);
 }
 
 .nav {
@@ -104,23 +113,37 @@ footer p2 {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-    body {
-        min-height: 100vh;
-    }
 
-    .container {
-        padding: 20px 10px;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .recovery-wrapper {
-        padding: 25px;
-        border-radius: 12px;
-    }
+  .listings {
+    justify-content: center;
+    padding: 10px;
+  }
 
-    .logo{
+  .card {
+    width: 90%;
+  }
+
+  input, button, select {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  textarea {
+    width: 90%;
+    height: 80px;
+  }
+.logo{
         max-width: 100px;
     }
-
+}
 </style>
 
 </head>
@@ -211,6 +234,15 @@ function showDetail(id) {
   `;
 }
 
+function contactSeller(owner) {
+  const msg = document.getElementById("message").value;
+
+  if (!msg) return alert("Écris un message");
+
+  alert(`Message envoyé à ${owner} :\n\n"${msg}"`);
+
+  document.getElementById("message").value = "";
+}
 // 🔹 ADD
 function addProperty() {
   const newProperty = {
@@ -331,7 +363,18 @@ function displayFavorites(list) {
     `;
   });
 }
+// 🔹 DISPLAY DETAILS
+document.getElementById("detailContent").innerHTML = `
+  <h2>${p.title}</h2>
+  <img src="${p.image}">
+  <p><strong>Ville :</strong> ${p.city}</p>
+  <p><strong>Prix :</strong> ${p.price} €</p>
 
+  <textarea id="message" placeholder="Écris ton message..."></textarea><br>
+  <button onclick="contactSeller('${p.owner}')">
+    💬 Envoyer message
+  </button>
+`;
 // 🔹 INIT
 displayProperties(properties);
 
