@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Marketplace Immobilier</title>
+    <title>IBMprod | Ndaku</title>
 
       <style>
       body {
@@ -21,6 +21,8 @@
       input, select, button {
         padding: 8px;
         margin: 5px;
+        cursor: pointer;
+        background: #f5f5f5;
       }
       
       .container {
@@ -60,7 +62,7 @@
       }
       
       .price {
-        color: green;
+        color: darkgoldenrod;
         font-weight: bold;
       }
       
@@ -74,6 +76,19 @@
         padding: 15px;
         margin: 10px;
       }
+    .delete { color: red; 
+             cursor: pointer; 
+    }
+    .hidden { display: none; }
+
+    .detail {
+      padding: 20px;
+    }
+    
+    .detail img {
+      width: 100%;
+      max-width: 400px;
+    }
       </style>
 
 </head>
@@ -81,128 +96,182 @@
 <body>
 
     <header>
-      <h1>🏠 Marketplace Immobilier</h1>
+      <h1>🏠 IBMndaku</h1>
+      <div class="nav">
+          <button onclick="showHome()">Accueil</button>
+          <button onclick="showFavorites()">❤️ Favoris</button>
+     </div>
     </header>
     
     <div class="form-container">
       <h3>Ajouter une annonce</h3>
-      <input type="text" id="title" placeholder="Titre">
+      <input type="text" id="title" placeholder="Titre et description">
       <input type="text" id="city" placeholder="Ville">
       <input type="number" id="price" placeholder="Prix">
+        
       <select id="type">
         <option value="maison">Maison</option>
         <option value="appartement">Appartement</option>
+        <option value="Parcelle">Parcelle ou Terrain</option>
       </select>
+        
       <input type="text" id="image" placeholder="URL image">
       <button onclick="addProperty()">Ajouter</button>
     </div>
     
     <div class="container">
-    
-      <div class="filters">
-        <h3>Filtres</h3>
-        <input type="text" id="search" placeholder="Ville...">
-        <input type="number" id="maxPrice" placeholder="Prix max">
+
+        <!-- FILTRE -->
+          <div class="filters">
+            <h3>Filtres</h3>
+            <input type="text" id="search" placeholder="Ville...">
+            <input type="number" id="maxPrice" placeholder="Prix max">
+          </div>
+
+                <!-- ANNONCE -->
+          <div class="listings" id="listings"></div>
+        
+                <!-- 🔹 PAGE FAVORIS -->
+          <div id="favoritesPage" class="hidden">
+              <h2 style="text-align:center;">❤️ Mes favoris</h2>
+              <div class="listings" id="favoritesList"></div>
+          </div>
+            <!-- 🔹 PAGE DETAIL -->
+         <div id="detailPage" class="hidden">
+              <button onclick="showHome()">⬅ Retour</button>
+              <div class="detail" id="detailContent"></div>
+          </div>
       </div>
-    
-      <div class="listings" id="listings"></div>
-    
-    </div>
 
     <script>
     
     // 🔹 Charger données
-    let properties = JSON.parse(localStorage.getItem("properties")) || [
-      {
-        id: 1,
-        title: "Maison moderne",
-        city: "Paris",
-        price: 300000,
-        type: "maison",
-        image: "https://via.placeholder.com/300"
-      }
-    ];
-    
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    
-    // 🔹 Sauvegarde
-    function saveData() {
-      localStorage.setItem("properties", JSON.stringify(properties));
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-    
-    // 🔹 Ajouter annonce
-    function addProperty() {
-      const newProperty = {
-        id: Date.now(),
-        title: document.getElementById("title").value,
-        city: document.getElementById("city").value,
-        price: parseInt(document.getElementById("price").value),
-        type: document.getElementById("type").value,
-        image: document.getElementById("image").value || "https://via.placeholder.com/300"
-      };
-    
-      properties.push(newProperty);
-      saveData();
-      displayProperties(properties);
-    }
-    
-    // 🔹 Favoris
-    function toggleFavorite(id) {
-      if (favorites.includes(id)) {
-        favorites = favorites.filter(f => f !== id);
-      } else {
-        favorites.push(id);
-      }
-      saveData();
-      displayProperties(properties);
-    }
-    
-    // 🔹 Affichage
-    function displayProperties(list) {
-      const container = document.getElementById("listings");
-      container.innerHTML = "";
-    
-      list.forEach(p => {
-        const isFav = favorites.includes(p.id);
-    
-        container.innerHTML += `
-          <div class="card">
-            <img src="${p.image}">
-            <div class="card-body">
-              <h4>${p.title}</h4>
-              <p>${p.city}</p>
-              <p class="price">${p.price} €</p>
-              <span class="heart" onclick="toggleFavorite(${p.id})">
-                ${isFav ? "❤️" : "🤍"}
-              </span>
-            </div>
-          </div>
-        `;
-      });
-    }
-    
-    // 🔹 Filtres
-    function filterProperties() {
-      const search = document.getElementById("search").value.toLowerCase();
-      const maxPrice = document.getElementById("maxPrice").value;
-    
-      const filtered = properties.filter(p => {
-        return (
-          (!search || p.city.toLowerCase().includes(search)) &&
-          (!maxPrice || p.price <= maxPrice)
-        );
-      });
-    
-      displayProperties(filtered);
-    }
-    
-    document.getElementById("search").addEventListener("input", filterProperties);
-    document.getElementById("maxPrice").addEventListener("input", filterProperties);
-    
-    // 🔹 Initialisation
-    displayProperties(properties);
-    
+ // 🔹 DATA
+let properties = JSON.parse(localStorage.getItem("properties")) || [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+// 🔹 SAVE
+function saveData() {
+  localStorage.setItem("properties", JSON.stringify(properties));
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+// 🔹 NAVIGATION
+function showHome() {
+  document.getElementById("home").classList.remove("hidden");
+  document.getElementById("favoritesPage").classList.add("hidden");
+  document.getElementById("detailPage").classList.add("hidden");
+  displayProperties(properties);
+}
+
+function showFavorites() {
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("favoritesPage").classList.remove("hidden");
+  document.getElementById("detailPage").classList.add("hidden");
+
+  const favList = properties.filter(p => favorites.includes(p.id));
+  displayFavorites(favList);
+}
+
+function showDetail(id) {
+  const p = properties.find(p => p.id === id);
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("favoritesPage").classList.add("hidden");
+  document.getElementById("detailPage").classList.remove("hidden");
+
+  document.getElementById("detailContent").innerHTML = `
+    <h2>${p.title}</h2>
+    <img src="${p.image}">
+    <p><strong>Ville :</strong> ${p.city}</p>
+    <p><strong>Prix :</strong> ${p.price} €</p>
+  `;
+}
+
+// 🔹 ADD
+function addProperty() {
+  const newProperty = {
+    id: Date.now(),
+    title: title.value,
+    city: city.value,
+    price: parseInt(price.value),
+    image: image.value || "https://via.placeholder.com/300"
+  };
+
+  properties.push(newProperty);
+  saveData();
+  displayProperties(properties);
+}
+
+// 🔹 DELETE
+function deleteProperty(id) {
+  properties = properties.filter(p => p.id !== id);
+  favorites = favorites.filter(f => f !== id);
+  saveData();
+  displayProperties(properties);
+}
+
+// 🔹 FAVORITES
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(f => f !== id);
+  } else {
+    favorites.push(id);
+  }
+  saveData();
+  displayProperties(properties);
+}
+
+// 🔹 DISPLAY HOME
+function displayProperties(list) {
+  const container = document.getElementById("listings");
+  container.innerHTML = "";
+
+  list.forEach(p => {
+    const isFav = favorites.includes(p.id);
+
+    container.innerHTML += `
+      <div class="card">
+        <img src="${p.image}" onclick="showDetail(${p.id})">
+        <div class="card-body">
+          <h4>${p.title}</h4>
+          <p>${p.city}</p>
+          <p class="price">${p.price} €</p>
+
+          <span class="heart" onclick="toggleFavorite(${p.id})">
+            ${isFav ? "❤️" : "🤍"}
+          </span>
+
+          <span class="delete" onclick="deleteProperty(${p.id})">
+            🗑️
+          </span>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// 🔹 DISPLAY FAVORITES
+function displayFavorites(list) {
+  const container = document.getElementById("favoritesList");
+  container.innerHTML = "";
+
+  list.forEach(p => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${p.image}" onclick="showDetail(${p.id})">
+        <div class="card-body">
+          <h4>${p.title}</h4>
+          <p>${p.city}</p>
+          <p class="price">${p.price} €</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// 🔹 INIT
+displayProperties(properties);    
     </script>
 
 </body>
