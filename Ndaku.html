@@ -225,7 +225,46 @@ function addProperty() {
   saveData();
   displayProperties(properties);
 }
+const imageInput = document.getElementById("imageFile");
+const preview = document.getElementById("preview");
 
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    preview.src = e.target.result;
+    preview.style.display = "block";
+  };
+  reader.readAsDataURL(file);
+});
+
+function addProperty() {
+  const file = imageInput.files[0];
+  if (!file) return alert("Ajoute une image");
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const newProperty = {
+      id: Date.now(),
+      title: title.value,
+      city: city.value,
+      price: parseInt(price.value),
+      image: e.target.result,
+      owner: currentUser
+    };
+
+    properties.push(newProperty);
+    saveData();
+    displayProperties(properties);
+
+    preview.style.display = "none"; // reset
+  };
+
+  reader.readAsDataURL(file);
+}
 // 🔹 DELETE
 function deleteProperty(id) {
   properties = properties.filter(p => p.id !== id);
