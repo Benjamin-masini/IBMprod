@@ -28,9 +28,7 @@ button { padding: 8px;
         margin: 5px; 
         cursor: pointer;
 }
-.ajouter{
-      background: #f5f5f5;
-}
+
 .nav {
   text-align: center;
   margin: 10px;
@@ -148,8 +146,9 @@ footer p2 {
     <input id="title" placeholder="Titre">
     <input id="city" placeholder="Ville">
     <input id="price" type="number" placeholder="Prix">
-    <input id="image" placeholder="URL image">
-    <button onclick="addProperty()" class="ajouter">Ajouter</button>
+    <input type="file" id="imageFile" accept="image/*">
+    <img id="preview" style="width:100px; display:none;">
+    <button onclick="addProperty()">Ajouter</button>
   </div>
 
   <div class="listings" id="listings"></div>
