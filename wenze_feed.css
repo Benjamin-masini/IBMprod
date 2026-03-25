@@ -52,7 +52,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin-top: 30px; /* Espacement entre le bouton et la barre de recherche */
-    width: 40%; /* Largeur à 100% pour occuper toute la ligne */
+    width: 10%; /* Largeur à 100% pour occuper toute la ligne */
     box-sizing: border-box; /* S'assurer que la largeur inclut le padding */
 }
 
