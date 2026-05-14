@@ -17,4 +17,8 @@ app.use(
   require("./modules/users/users.routes")
 );
 
+app.use(
+  "/api/properties",
+  require("./modules/property/property.routes")
+);
 module.exports = app;
