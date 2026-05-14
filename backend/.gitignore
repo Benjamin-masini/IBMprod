@@ -1,9 +1,0 @@
-# Node.js Dependencies
-node_modules/
-
-# Environment Variables
-.env
-
-# Logs
-logs/
-npm-debug.log
