@@ -21,4 +21,9 @@ app.use(
   "/api/properties",
   require("./modules/property/property.routes")
 );
+
+app.use(
+  "/uploads",
+  express.static("uploads")
+);
 module.exports = app;
