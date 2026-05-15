@@ -38,4 +38,11 @@ app.use(
     "./core/messaging/messaging.routes"
   )
 );
+
+app.use(
+  "/api/marketplace",
+  require(
+    "./modules/marketplace/marketplace.routes"
+  )
+);
 module.exports = app;
