@@ -45,4 +45,11 @@ app.use(
     "./modules/marketplace/marketplace.routes"
   )
 );
+
+app.use(
+  "/api/library",
+  require(
+    "./modules/library/library.routes"
+  )
+);
 module.exports = app;
