@@ -26,4 +26,9 @@ app.use(
   "/uploads",
   express.static("uploads")
 );
+
+app.use(
+  "/api/favorites",
+  require("./core/favorites/favorite.routes")
+);
 module.exports = app;
