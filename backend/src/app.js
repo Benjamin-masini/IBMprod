@@ -52,4 +52,9 @@ app.use(
     "./modules/library/library.routes"
   )
 );
+
+app.use(
+  "/api/events",
+  require("./modules/event/event.routes")
+);
 module.exports = app;
