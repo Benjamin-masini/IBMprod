@@ -31,4 +31,11 @@ app.use(
   "/api/favorites",
   require("./core/favorites/favorite.routes")
 );
+
+app.use(
+  "/api/messaging",
+  require(
+    "./core/messaging/messaging.routes"
+  )
+);
 module.exports = app;
