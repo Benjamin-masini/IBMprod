@@ -57,4 +57,11 @@ app.use(
   "/api/events",
   require("./modules/event/event.routes")
 );
+
+app.use(
+  "/api/notifications",
+  require(
+    "./core/notifications/notification.routes"
+  )
+);
 module.exports = app;
