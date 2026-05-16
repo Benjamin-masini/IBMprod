@@ -10,4 +10,11 @@ app.use(
   require("./modules/event/event.routes")
 );
 
+app.use(
+  "/api/search",
+  require(
+    "./core/search/search.routes"
+  )
+);
+
 module.exports = app;
