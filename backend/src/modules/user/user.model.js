@@ -16,4 +16,9 @@ const userSchema =
     lastSeen: {
       type: Date,
     },
+
+    isBanned: {
+  type: Boolean,
+  default: false,
+},
   });
