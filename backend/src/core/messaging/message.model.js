@@ -32,6 +32,16 @@ const messageSchema =
     }
   );
 
+attachments: [
+  {
+    fileUrl: String,
+
+    fileType: String,
+
+    originalName: String,
+  },
+],
+
 module.exports = mongoose.model(
   "Message",
   messageSchema
