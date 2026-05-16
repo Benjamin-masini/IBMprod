@@ -37,22 +37,44 @@ exports.createConversation =
     });
   };
 
-exports.sendMessage = async (
+exports.sendMessage = async ({
   conversationId,
   sender,
-  content
-) => {
+  content,
+  files,
+}) => {
+  const attachments = files
+    ? files.map((file) => ({
+        fileUrl:
+          file.path,
+
+        fileType:
+          file.mimetype,
+
+        originalName:
+          file.originalname,
+      }))
+    : [];
+
   const message =
     await Message.create({
-      conversation: conversationId,
+      conversation:
+        conversationId,
+
       sender,
+
       content,
+
+      attachments,
     });
 
-  // SOCKET EVENT
+  // SOCKET
   const io = getIO();
 
-  io.emit("newMessage", message);
+  io.emit(
+    "newMessage",
+    message
+  );
 
   return message;
 };
