@@ -10,6 +10,10 @@ const auth = require(
   "../../middleware/auth.middleware"
 );
 
+const upload = require(
+  "../../middleware/chatUpload.middleware"
+);
+
 // CREATE CONVERSATION
 router.post(
   "/conversation",
