@@ -1,26 +1,33 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
+require("dotenv").config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const http = require("http");
 
-// Middleware setup
-app.use(cors());
-app.use(helmet());
-app.use(express.json());
+const app = require("./app");
 
-// Routes initialization
-app.get('/', (req, res) => {
-    res.send('Welcome to the Express Server!');
-});
+const connectDB = require(
+  "./config/database"
+);
 
-// Error handling
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!');
-});
+const {
+  initSocket,
+} = require("./socket/socket");
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// CONNECT DATABASE
+connectDB();
+
+const PORT =
+  process.env.PORT || 5000;
+
+// CREATE HTTP SERVER
+const server =
+  http.createServer(app);
+
+// INITIALIZE SOCKET.IO
+initSocket(server);
+
+// START SERVER
+server.listen(PORT, () => {
+  console.log(
+    `🚀 Server running on port ${PORT}`
+  );
 });
