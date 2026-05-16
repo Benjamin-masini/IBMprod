@@ -50,12 +50,24 @@ exports.sendMessage = async (
   try {
     const message =
       await messagingService.sendMessage(
-        req.body.conversationId,
-        req.user.id,
-        req.body.content
+        {
+          conversationId:
+            req.body
+              .conversationId,
+
+          sender:
+            req.user.id,
+
+          content:
+            req.body.content,
+
+          files: req.files,
+        }
       );
 
-    res.status(201).json(message);
+    res.status(201).json(
+      message
+    );
   } catch (error) {
     res.status(400).json({
       message: error.message,
