@@ -32,9 +32,12 @@ router.get(
 router.post(
   "/message",
   auth,
+  upload.array(
+    "attachments",
+    10
+  ),
   controller.sendMessage
 );
-
 // GET CONVERSATION MESSAGES
 router.get(
   "/message/:conversationId",
