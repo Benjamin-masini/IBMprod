@@ -24,4 +24,10 @@ app.use(
   )
 );
 
+app.use(
+  "/api/admin",
+  require(
+    "./core/admin/admin.routes"
+  )
+);
 module.exports = app;
