@@ -22,6 +22,16 @@ const messageSchema =
         required: true,
       },
 
+    attachments: [
+      {
+      fileUrl: String,
+
+      fileType: String,
+
+    originalName: String,
+  },
+],
+      
       isRead: {
         type: Boolean,
         default: false,
@@ -31,16 +41,6 @@ const messageSchema =
       timestamps: true,
     }
   );
-
-attachments: [
-  {
-    fileUrl: String,
-
-    fileType: String,
-
-    originalName: String,
-  },
-],
 
 module.exports = mongoose.model(
   "Message",
