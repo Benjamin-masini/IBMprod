@@ -17,4 +17,11 @@ app.use(
   )
 );
 
+app.use(
+  "/api/payments",
+  require(
+    "./core/payments/payment.routes"
+  )
+);
+
 module.exports = app;
