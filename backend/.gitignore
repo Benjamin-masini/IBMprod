@@ -8,4 +8,6 @@ node_modules/
 logs/
 npm-debug.log
 
-.uploads
+.env
+node_modules
+uploads
