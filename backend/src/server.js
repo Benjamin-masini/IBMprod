@@ -10,7 +10,7 @@ const connectDB = require(
 
 const {
   initSocket,
-} = require("./socket/socket");
+} = require("./socket/socket.js");
 
 // CONNECT DATABASE
 connectDB();
