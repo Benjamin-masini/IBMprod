@@ -3,19 +3,19 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require(
-  "./marketplace.controller"
+  "./marketplace.controller.js"
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 const role = require(
-  "../../middleware/role.middleware"
+  "../../middleware/role.middleware.js"
 );
 
 const upload = require(
-  "../../middleware/upload.middleware"
+  "../../middleware/upload.middleware.js"
 );
 
 // GET ALL ITEMS
