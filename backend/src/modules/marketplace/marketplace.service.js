@@ -1,4 +1,4 @@
-const Marketplace = require("./marketplace.model");
+const Marketplace = require("./marketplace.model.js");
 
 exports.createItem = async (
   data,
