@@ -7,15 +7,15 @@ const controller = require(
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 const role = require(
-  "../../middleware/role.middleware"
+  "../../middleware/role.middleware.js"
 );
 
 const upload = require(
-  "../../middleware/upload.middleware"
+  "../../middleware/upload.middleware.js"
 );
 
 // GET ALL
