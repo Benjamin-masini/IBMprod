@@ -1,5 +1,5 @@
 const eventService = require(
-  "./event.service"
+  "./event.service.js"
 );
 
 exports.createEvent = async (
