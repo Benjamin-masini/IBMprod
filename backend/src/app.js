@@ -23,27 +23,27 @@ app.use(
 // ROUTES
 app.use(
   "/api/events",
-  require("./modules/event/event.routes")
+  require("./modules/event/event.routes.js")
 );
 
 app.use(
   "/api/search",
   require(
-    "./core/search/search.routes"
+    "./core/search/search.routes.js"
   )
 );
 
 app.use(
   "/api/payments",
   require(
-    "./core/payments/payment.routes"
+    "./core/payments/payment.routes.js"
   )
 );
 
 app.use(
   "/api/admin",
   require(
-    "./core/admin/admin.routes"
+    "./core/admin/admin.routes.js"
   )
 );
 module.exports = app;
