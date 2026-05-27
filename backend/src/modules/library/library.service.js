@@ -1,4 +1,4 @@
-const Library = require("./library.model");
+const Library = require("./library.model.js");
 
 exports.createBook = async (
   data,
