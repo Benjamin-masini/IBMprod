@@ -1,4 +1,4 @@
-const Favorite = require("./favorite.model");
+const Favorite = require("./favorite.model.js");
 
 exports.addFavorite = async (
   userId,
