@@ -1,5 +1,5 @@
 const paymentService = require(
-  "./payment.service"
+  "./payment.service.js"
 );
 
 exports.createPayment =
