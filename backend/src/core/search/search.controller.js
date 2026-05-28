@@ -1,5 +1,5 @@
 const searchService = require(
-  "./search.service"
+  "./search.service.js"
 );
 
 exports.globalSearch = async (
