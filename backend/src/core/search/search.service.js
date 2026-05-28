@@ -1,17 +1,17 @@
 const Property = require(
-  "../../modules/property/property.model"
+  "../../modules/property/property.model.js"
 );
 
 const Marketplace = require(
-  "../../modules/marketplace/marketplace.model"
+  "../../modules/marketplace/marketplace.model.js"
 );
 
 const Library = require(
-  "../../modules/library/library.model"
+  "../../modules/library/library.model.js"
 );
 
 const Event = require(
-  "../../modules/event/event.model"
+  "../../modules/event/event.model.js"
 );
 
 
