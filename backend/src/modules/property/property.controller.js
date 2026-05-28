@@ -1,5 +1,5 @@
 const propertyService = require(
-  "./property.service"
+  "./property.service.js"
 );
 
 exports.createProperty = async (
