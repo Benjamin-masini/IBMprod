@@ -1,25 +1,25 @@
 const User = require(
-  "../../modules/user/user.model"
+  "../../modules/user/user.model.js"
 );
 
 const Property = require(
-  "../../modules/property/property.model"
+  "../../modules/property/property.model.js"
 );
 
 const Marketplace = require(
-  "../../modules/marketplace/marketplace.model"
+  "../../modules/marketplace/marketplace.model.js"
 );
 
 const Library = require(
-  "../../modules/library/library.model"
+  "../../modules/library/library.model.js"
 );
 
 const Event = require(
-  "../../modules/event/event.model"
+  "../../modules/event/event.model.js"
 );
 
 const Payment = require(
-  "../payments/payment.model"
+  "../payments/payment.model.js"
 );
 
 exports.getDashboardStats =
