@@ -3,15 +3,15 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require(
-  "./admin.controller"
+  "./admin.controller.js"
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 const role = require(
-  "../../middleware/role.middleware"
+  "../../middleware/role.middleware.js"
 );
 
 // ADMIN ONLY
