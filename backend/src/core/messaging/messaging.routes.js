@@ -3,15 +3,15 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require(
-  "./messaging.controller"
+  "./messaging.controller.js"
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 const upload = require(
-  "../../middleware/chatUpload.middleware"
+  "../../middleware/chatUpload.middleware.js"
 );
 
 // CREATE CONVERSATION
