@@ -1,5 +1,5 @@
 const favoriteService = require(
-  "./favorite.service"
+  "./favorite.service.js"
 );
 
 exports.addFavorite = async (
