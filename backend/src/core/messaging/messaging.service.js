@@ -1,14 +1,14 @@
 const Conversation = require(
-  "./conversation.model"
+  "./conversation.model.js"
 );
 
 const Message = require(
-  "./message.model"
+  "./message.model.js"
 );
 
 const {
   getIO,
-} = require("../../socket/socket");
+} = require("../../socket/socket.js");
 
 exports.createConversation =
   async (
