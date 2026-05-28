@@ -1,5 +1,5 @@
 const messagingService = require(
-  "./messaging.service"
+  "./messaging.service.js"
 );
 
 exports.createConversation =
