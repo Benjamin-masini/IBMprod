@@ -1,5 +1,5 @@
 const marketplaceService = require(
-  "./marketplace.service"
+  "./marketplace.service.js"
 );
 
 exports.createItem = async (
