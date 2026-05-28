@@ -3,11 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require(
-  "./favorite.controller"
+  "./favorite.controller.js"
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 // ADD
