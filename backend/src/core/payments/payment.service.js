@@ -1,9 +1,9 @@
 const Payment = require(
-  "./payment.model"
+  "./payment.model.js"
 );
 
 const stripeProvider = require(
-  "./providers/stripe.provider"
+  "./providers/stripe.provider.js"
 );
 
 exports.createPayment =
