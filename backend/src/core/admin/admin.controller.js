@@ -1,5 +1,5 @@
 const adminService = require(
-  "./admin.service"
+  "./admin.service.js"
 );
 
 exports.getDashboard =
