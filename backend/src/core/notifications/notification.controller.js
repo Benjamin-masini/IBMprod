@@ -1,5 +1,5 @@
 const notificationService = require(
-  "./notification.service"
+  "./notification.service.js"
 );
 
 exports.getNotifications =
