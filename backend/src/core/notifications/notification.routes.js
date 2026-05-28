@@ -3,11 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require(
-  "./notification.controller"
+  "./notification.controller.js"
 );
 
 const auth = require(
-  "../../middleware/auth.middleware"
+  "../../middleware/auth.middleware.js"
 );
 
 // GET USER NOTIFICATIONS
