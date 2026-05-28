@@ -1,10 +1,10 @@
 const Notification = require(
-  "./notification.model"
+  "./notification.model.js"
 );
 
 const {
   getIO,
-} = require("../../socket/socket");
+} = require("../../socket/socket.js");
 
 exports.createNotification =
   
