@@ -1,0 +1,107 @@
+backend/
+│
+├── src/
+│   │
+│   ├── modules/
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── auth.routes.js
+│   │   │   ├── auth.controller.js
+│   │   │   ├── auth.service.js
+│   │   │   └── auth.validation.js
+│   │   │
+│   │   ├── users/
+│   │   │   ├── users.routes.js
+│   │   │   ├── users.controller.js
+│   │   │   ├── users.service.js
+│   │   │   └── users.model.js
+│   │   │
+│   │   ├── property/
+│   │   │    │── property.controller.js
+│   │   │    │── property.model.js
+│   │   │    │── property.routes.js
+│   │   │    └── property.service.js
+│   │   │
+│   │   ├── marketplace/
+│   │   │    │── marketplace.controller.js
+│   │   │    │── marketplace.mode.js
+│   │   │    │── marketplace.routes.js
+│   │   │    └── marketplace.service.js
+│   │   │
+│   │   ├── library/
+│   │   │    │── library.model.js
+│   │   │    │── library.service.js
+│   │   │    │── library.controller.js
+│   │   │    │── library.routes.js
+│   │   │    └── library.validation.js
+│   │   │
+│   │   └── event/
+│   │        │── event.model.js
+│   │        │── event.service.js
+│   │        │── event.controller.js
+│   │        │── event.routes.js
+│   │        │── event.validation.js
+│   │   
+│   ├── core/
+│   │   ├── messaging/
+│   │   │     ├── message.service.js
+│   │   │     │── message.model.js
+│   │   │     │── conversation.model.js
+│   │   │     ├── message.controller.js
+│   │   │     └── message.routes.js
+│   │   ├── favorites/
+│   │   │     ├── favorite.service.js
+│   │   │     │── favorite.model.js
+│   │   │     ├── favorite.controller.js
+│   │   │     └── favorite.routes.js
+│   │   ├── search/
+│   │   │     ├── search.service.js
+│   │   │     ├── search.controller.js
+│   │   │     └── search.routes.js
+│   │   │
+│   │   ├──notifications/
+│   │   │     │── notification.model.js
+│   │   │     │── notification.service.js
+│   │   │     │── notification.controller.js
+│   │   │     └── notification.routes.js
+│   │   │
+│   │   ├──admin/
+│   │   │     │
+│   │   │     ├── admin.service.js
+│   │   │     ├── admin.controller.js
+│   │   │     └── admin.routes.js
+│   │   │
+│   │   │
+│   │   │
+│   │   └──payments/
+│   │         ├── payment.model.js
+│   │         ├── payment.service.js
+│   │         ├── payment.controller.js
+│   │         ├── payment.routes.js
+│   │         └── providers/
+│   │                └── stripe.provider.js
+│   ├── middleware/
+│   │   ├── auth.middleware.js
+│   │   ├── role.middleware.js
+│   │   ├── chatUpload.middleware.js
+│   │   ├── upload.middleware.js
+│   │   └── validation.middleware.js
+│   │
+│   ├── config/
+│   │   └── database.js
+│   │
+│   ├── socket/
+│   │    ├── socket.js
+│   │    ├── messaging.socket.js
+│   │    └── notification.socket.js
+│   │
+│   │
+│   ├── utils/
+│   │
+│   ├── app.js
+│   └── server.js
+│
+├── uploads/
+├── .env
+├── package.json
+└── README.md
