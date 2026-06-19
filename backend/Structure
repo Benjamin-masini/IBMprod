@@ -85,6 +85,10 @@ backend/
 │   │   ├── role.middleware.js
 │   │   ├── chatUpload.middleware.js
 │   │   ├── upload.middleware.js
+│   │   ├── errorHandler.js
+│   │   ├── rateLimiter.js
+│   │   ├── sanitize.middleware.js
+│   │   ├── security.middleware.js
 │   │   └── validation.middleware.js
 │   │
 │   ├── config/
