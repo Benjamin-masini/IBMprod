@@ -5,6 +5,8 @@ import androidx.work.*
 import com.google.gson.Gson
 import com.ibmprod.db.AppDatabase
 import com.ibmprod.db.SyncLog
+import com.ibmprod.util.SecurePrefs
+import com.ibmprod.config.Config
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
@@ -12,7 +14,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import java.util.concurrent.TimeUnit
 
 class BackupWorker(appContext: Context, workerParams: WorkerParameters) : CoroutineWorker(appContext, workerParams) {
@@ -29,9 +30,8 @@ class BackupWorker(appContext: Context, workerParams: WorkerParameters) : Corout
       // Example export JSON
       val exportJson = gson.toJson(pending)
 
-      // Obtain JWT from AppSetting (stored by your auth flow)
-      val tokenSetting = db.appSettingDao().getByKey("auth_jwt")
-      val jwt = tokenSetting?.value
+      // Obtain JWT from secure storage (EncryptedSharedPreferences)
+      val jwt = SecurePrefs.getJwt(applicationContext)
       if (jwt.isNullOrBlank()) {
         // No JWT configured — fail so WorkManager can retry later
         return@withContext Result.retry()
@@ -48,8 +48,8 @@ class BackupWorker(appContext: Context, workerParams: WorkerParameters) : Corout
       val requestBody = multipartBuilder.build()
 
       val request = Request.Builder()
-        .url("${'$'}{BuildConfig.BACKEND_URL}/api/backups/upload")
-        .addHeader("Authorization", "Bearer ${'$'}jwt")
+        .url("${Config.BACKEND_URL}/api/backups/upload")
+        .addHeader("Authorization", "Bearer $jwt")
         .post(requestBody)
         .build()
 
@@ -58,7 +58,12 @@ class BackupWorker(appContext: Context, workerParams: WorkerParameters) : Corout
         pending.forEach { db.syncLogDao().markProcessed(it.id) }
         Result.success()
       } else {
-        // On 4xx we might not want to retry forever — but for now retry
+        if (resp.code == 401) {
+          // Unauthorized: clear stored JWT so user must re-authenticate
+          SecurePrefs.clearJwt(applicationContext)
+          return@withContext Result.failure()
+        }
+        // On other failures retry
         Result.retry()
       }
     } catch (e: Exception) {
