@@ -1,18 +1,20 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
-app.use(cors());
+app.use(require('cors')());
 
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Auth & User routes
-app.use('/api/auth', require('./modules/auth/auth.routes'));
+app.use('/api/auth', require('./modules/auth/authRoutes'));
 app.use('/api/users', require('./modules/user/user.routes'));
+
+// Backups
+app.use('/api/backups', require('./modules/backups/backupsRoutes'));
 
 // Feature routes
 app.use('/api/events', require('./modules/event/event.routes'));

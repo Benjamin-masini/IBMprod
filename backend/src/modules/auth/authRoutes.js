@@ -1,9 +1,8 @@
-// authRoutes.js
-
 const express = require('express');
+const expressLib = express();
 const router = express.Router();
 
-// Mock authentication service for demonstration purposes. Replace with your actual implementation.
+// existing mock authService preserved
 const authService = {
     register: (req, res) => {
         // Handle user registration
@@ -11,21 +10,26 @@ const authService = {
     },
     login: (req, res) => {
         // Handle user login
-        res.send('User logged in successfully!');
+        res.send('User logged in');
     },
     logout: (req, res) => {
-        // Handle user logout
-        res.send('User logged out successfully!');
+        // Handle logout
+        res.send('User logged out');
     }
 };
 
-// Register endpoint
+// Wire existing endpoints to authService
 router.post('/register', authService.register);
-
-// Login endpoint
 router.post('/login', authService.login);
-
-// Logout endpoint
 router.post('/logout', authService.logout);
+
+// New Google OAuth endpoints (server-side exchange / refresh)
+const authController = require('./authController');
+const authMiddleware = require('../../middleware/auth.middleware');
+
+// Exchange authorization code for refresh token and store it server-side
+router.post('/google/exchange', authMiddleware, authController.googleExchange);
+// Refresh access token using stored refresh token
+router.post('/google/refresh', authMiddleware, authController.googleRefresh);
 
 module.exports = router;
