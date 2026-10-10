@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS users (
   updated_at TEXT
 );
 
--- Modules registry (ZEWE, SQNGO, DEFA, GALERIE, ndaku, bu)
+-- Modules registry (WENZE, SANGO, DEFA, GALERIE, NDAKU)
 CREATE TABLE IF NOT EXISTS modules (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   code TEXT UNIQUE NOT NULL,
