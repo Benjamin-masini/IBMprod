@@ -1,4 +1,4 @@
-package com.yourapp.db
+package com.ibmprod.db
 
 import androidx.room.Database
 import androidx.room.Room
