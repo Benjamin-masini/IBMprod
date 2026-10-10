@@ -1,10 +1,10 @@
-package com.yourapp.sync
+package com.ibmprod.sync
 
 import android.content.Context
 import androidx.work.*
 import com.google.gson.Gson
-import com.yourapp.db.AppDatabase
-import com.yourapp.db.SyncLog
+import com.ibmprod.db.AppDatabase
+import com.ibmprod.db.SyncLog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
