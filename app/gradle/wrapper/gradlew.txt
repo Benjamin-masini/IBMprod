@@ -1,4 +1,3 @@
-cat > gradlew <<'EOF'
 #!/usr/bin/env sh
 # Gradle wrapper script (thin script). Ensure gradle-wrapper.jar exists in gradle/wrapper.
 set -e
@@ -14,5 +13,3 @@ while [ -h "$PRG" ]; do
 done
 PRGDIR=`dirname "$PRG"`
 exec "$PRGDIR/gradle/wrapper/gradle-wrapper.jar" "$@"
-EOF
-chmod +x gradlew
