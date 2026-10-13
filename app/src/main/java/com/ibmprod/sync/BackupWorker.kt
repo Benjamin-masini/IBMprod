@@ -5,21 +5,13 @@ import androidx.work.*
 import com.google.gson.Gson
 import com.ibmprod.db.AppDatabase
 import com.ibmprod.db.SyncLog
-import com.ibmprod.util.SecurePrefs
-import com.ibmprod.config.Config
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.MultipartBody
 import java.util.concurrent.TimeUnit
 
 class BackupWorker(appContext: Context, workerParams: WorkerParameters) : CoroutineWorker(appContext, workerParams) {
   private val gson = Gson()
   private val db = AppDatabase.getInstance(appContext)
-  private val client = OkHttpClient()
 
   override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
     try {
@@ -30,42 +22,11 @@ class BackupWorker(appContext: Context, workerParams: WorkerParameters) : Corout
       // Example export JSON
       val exportJson = gson.toJson(pending)
 
-      // Obtain JWT from secure storage (EncryptedSharedPreferences)
-      val jwt = SecurePrefs.getJwt(applicationContext)
-      if (jwt.isNullOrBlank()) {
-        // No JWT configured — fail so WorkManager can retry later
-        return@withContext Result.retry()
-      }
+      // TODO: upload exportJson to your cloud storage / API here
+      // For now we mark them processed to avoid repeated exports in demo
+      pending.forEach { db.syncLogDao().markProcessed(it.id) }
 
-      // Build multipart request to backend
-      val multipartBuilder = MultipartBody.Builder().setType(MultipartBody.FORM)
-      multipartBuilder.addFormDataPart(
-        "file",
-        "ibmprod_sync_export_${System.currentTimeMillis()}.json",
-        exportJson.toRequestBody("application/json".toMediaType())
-      )
-
-      val requestBody = multipartBuilder.build()
-
-      val request = Request.Builder()
-        .url("${Config.BACKEND_URL}/api/backups/upload")
-        .addHeader("Authorization", "Bearer $jwt")
-        .post(requestBody)
-        .build()
-
-      val resp = client.newCall(request).execute()
-      if (resp.isSuccessful) {
-        pending.forEach { db.syncLogDao().markProcessed(it.id) }
-        Result.success()
-      } else {
-        if (resp.code == 401) {
-          // Unauthorized: clear stored JWT so user must re-authenticate
-          SecurePrefs.clearJwt(applicationContext)
-          return@withContext Result.failure()
-        }
-        // On other failures retry
-        Result.retry()
-      }
+      Result.success()
     } catch (e: Exception) {
       e.printStackTrace()
       Result.retry()
