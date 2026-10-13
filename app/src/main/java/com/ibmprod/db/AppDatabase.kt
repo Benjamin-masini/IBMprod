@@ -17,7 +17,6 @@ abstract class AppDatabase : RoomDatabase() {
   abstract fun itemDao(): ItemDao
   abstract fun mediaDao(): MediaDao
   abstract fun tagDao(): TagDao
-  abstract fun appSettingDao(): AppSettingDao
   abstract fun syncLogDao(): SyncLogDao
 
   companion object {

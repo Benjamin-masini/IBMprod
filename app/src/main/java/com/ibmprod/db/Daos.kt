@@ -36,12 +36,6 @@ interface TagDao {
 }
 
 @Dao
-interface AppSettingDao {
-  @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun upsert(setting: AppSetting)
-  @Query("SELECT * FROM app_settings WHERE key = :key") suspend fun getByKey(key: String): AppSetting?
-}
-
-@Dao
 interface SyncLogDao {
   @Insert suspend fun insertLog(log: SyncLog): Long
   @Query("SELECT * FROM sync_log WHERE processed = 0 ORDER BY createdAt ASC LIMIT :limit") suspend fun fetchPending(limit: Int): List<SyncLog>
